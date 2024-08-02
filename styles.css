@@ -1,0 +1,195 @@
+/* ============ TEXT STYLES ============ */
+
+@font-face {
+   font-family: 'terminalGOpen';
+   src: url(assets/terminal-grotesque_open.otf);
+}
+
+@font-face {
+   font-family: 'officeCodePro';
+   src: url(assets/OfficeCodePro-Regular.otf);
+}
+
+h1 {
+   font-family: 'terminalGOpen';
+   font-weight: normal;
+   font-size: 120px;
+   /* text-align: right; */
+   color: white;
+
+   margin-top: -5px;
+   margin-bottom: 0px;
+}
+
+h2 {
+   font-family: 'terminalGOpen';
+   font-weight: normal;
+   font-size: 75px;
+   /* text-align: right; */
+   color: white;
+
+   margin-top: -5px;
+   margin-bottom: 0px;
+}
+
+h3 {
+   font-family: 'officeCodePro';
+   font-size: 20pt;
+}
+
+
+/* really this is h3, but h3 was already created and used on multiple pages */
+h4 {
+   font-family: 'terminalGOpen';
+   font-weight: normal;
+   font-size: 120px;
+   color: rgb(200, 200, 200);
+
+   margin-top: -5px;
+   margin-bottom: 0px;
+}
+
+.title {
+   font-family: 'terminalGOpen';
+   font-size: 120px;
+   text-align: right;
+   color: white;
+}
+
+p {
+   font-family:'officeCodePro';
+   font-size: 12pt;
+   color: white;
+}
+
+.menu p {
+   color: black;
+}
+
+a p:hover {
+   color:rgb(255, 68, 0) ;
+   cursor: pointer;
+}
+
+a h4:hover {
+   color:rgb(255, 68, 0) ;
+   cursor: pointer;
+}
+
+.mainPara {
+   margin-top: 1vw;
+   column-count: 2;
+   column-width: 8px;
+}
+
+.infoTextBL {
+   position: absolute;
+   bottom: -20px;
+}
+
+/* ============ PAGE LAYOUT ============ */
+
+.grid {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   grid-auto-rows: 7vw;
+   column-gap: 8px;
+   row-gap: 8px;
+}
+
+.outerMargin {
+   margin: 8px;
+}
+
+.textCell {
+   position: relative;
+   /* background-color: rgb(199, 165, 165); */
+}
+
+/* ============ PAGE ELEMENTS ============ */
+
+body {
+   margin: 0vh;
+   display: grid;
+   grid-template-columns: auto 50px;
+   height: 99.4vh;
+
+   padding: 0px;
+}
+
+#sideBar {
+   position: fixed;
+   top: 0;
+   right: 0;
+
+
+   width: 50px;
+   height: 100%;
+
+   background-color: white;
+}
+
+#sideBar:hover {
+   width: 270px;
+
+   overflow: hidden;
+}
+
+.menu {
+   display: flex;
+   flex-direction: row;
+
+   position: relative;
+   left: 0;
+   bottom: 0;
+
+   overflow: hidden;
+}
+
+.menuColumn {
+   margin-left: 17px;
+   margin-right: 50px;
+}
+
+.menuOptions {
+   /* color: white; */
+   margin-top: 15px;
+}
+
+iframe {
+   width: 100%;
+   height: 100%;
+}
+
+img {
+   max-width:100%;
+   max-height:100%;
+}
+
+/* ============ MISC ============ */
+
+canvas {
+   display:block;
+   z-index: -1;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+h4 u{
+   text-decoration-thickness: 9px;
+}
+
+::-webkit-scrollbar {
+   background-color: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+   background-color: rgb(86, 86, 86);
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background-color: rgb(135, 135, 135);
+}
