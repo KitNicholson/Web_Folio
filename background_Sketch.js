@@ -15,7 +15,7 @@ var canvas
 // ======================== Main Functions ======================== //
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(windowWidth-1, windowHeight);
   canvas.position(0,0);
   frameRate(60);
   angleMode(DEGREES);
