@@ -98,6 +98,12 @@ a h4:hover {
 }
 
 .outerMargin {
+   position: fixed;
+   left: 0px;
+   top: 0px;
+
+   width: 100vw;
+   height: 100vh;
    margin: 8px;
 }
 
