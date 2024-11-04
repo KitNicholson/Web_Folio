@@ -50,7 +50,8 @@ function setup() {
 
 function draw() {
 
-  background(191,0,0, 0.6);
+  fadeBackground();
+  //background(191,0,0, 0.6);
   //background(0, 1);
 
   translate((sin(frameCount/8)+1)/3 * width, height*15/16);
@@ -74,6 +75,12 @@ function draw() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight-1);
   background(ringColour);
+}
+
+function fadeBackground() {
+  if (frameCount % 2 === 0) {
+    background(191,0,0, 0.6);
+  }
 }
 
 // ======================== Helper Functions ======================== //
