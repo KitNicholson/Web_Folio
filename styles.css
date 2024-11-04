@@ -98,6 +98,7 @@ a h4:hover {
 }
 
 .outerMargin {
+   grid-area: 1/1 / span 1 / span 1;
    margin: 8px;
 }
 
@@ -112,6 +113,7 @@ body {
    margin: 0vh;
    display: grid;
    grid-template-columns: auto 50px;
+   grid-template-rows: 100vh;
    height: 99.4vh;
 
    padding: 0px;
@@ -193,3 +195,17 @@ h4 u{
 ::-webkit-scrollbar-thumb:hover {
    background-color: rgb(135, 135, 135);
 }
+
+@media only screen and (max-width: 800px) {
+   .grid {
+      grid-template-columns: 100vw;
+   }
+
+   #sideBar {
+      height: 190px;
+   }
+
+   #sideBar:hover {
+      width: 200px;
+   }
+ }
