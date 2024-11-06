@@ -197,15 +197,5 @@ h4 u{
 }
 
 @media only screen and (max-width: 800px) {
-   .grid {
-      grid-template-columns: 100vw;
-   }
-
-   #sideBar {
-      height: 190px;
-   }
-
-   #sideBar:hover {
-      width: 200px;
-   }
+   /* for mobile screens */
  }
