@@ -43,7 +43,7 @@ h4 {
    font-family: 'terminalGOpen';
    font-weight: normal;
    font-size: 110px;
-   color: rgb(200, 200, 200);
+   color: rgb(160, 160, 160);
 
    margin-top: -5px;
    margin-bottom: 0px;
@@ -171,6 +171,11 @@ iframe {
 img {
    max-width:100%;
    max-height:100%;
+}
+
+.imgFill {
+   width: 100%;
+   height: 100%;
 }
 
 /* ============ MISC ============ */
