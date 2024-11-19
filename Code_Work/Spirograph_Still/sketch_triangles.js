@@ -43,6 +43,10 @@ function setup() {
 
 function draw() {
 
+  if (time > 180) {
+    return
+  }
+
   translate(width/2, height/2 - height/40);
   rotate(90);
 
@@ -54,9 +58,6 @@ function draw() {
 
   updateRing(ring);
 
-  if (time > 180) {
-    noLoop();
-  }
 }
 
 // ======================== Helper Functions ======================== //
@@ -127,4 +128,10 @@ function Coordinate(x_, y_, angle_, radius_) {
   this.y2 = 0;
   this.angle = angle_;
   this.radius = radius_;
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth-30, windowHeight-1);
+  background(0);
+  time = 0;
 }
