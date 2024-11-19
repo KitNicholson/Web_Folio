@@ -1117,3 +1117,8 @@ function playStingLowPan(pan) {
 
   audioSting.play();
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth-30, windowHeight-1);
+  background(backgroundColr);
+}

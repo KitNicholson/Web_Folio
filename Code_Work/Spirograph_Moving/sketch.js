@@ -121,3 +121,10 @@ function Coordinate(x_, y_, angle_, radius_) {
   this.angle = angle_;
   this.radius = radius_;
 }
+
+// ======================== Helpers ======================== //
+
+function windowResized() {
+  resizeCanvas(windowWidth-30, windowHeight-1);
+  background(0);
+}

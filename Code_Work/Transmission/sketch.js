@@ -289,3 +289,9 @@ function flipShift(circle) {
     shiftTransformBot(circle);
   }
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth-30, windowHeight-1);
+  background(0);
+  setupCircles();
+}
