@@ -47,7 +47,8 @@ var sketch = function(p) {
     p.getCenterPos();
     console.log(p.height);
 
-    p.imgScale = p.height * 0.0005;
+    p.setImgScale();
+
   }
 
   p.draw = function() {
@@ -77,10 +78,15 @@ var sketch = function(p) {
   p.windowResized = function() {
     p.resizeCanvas(p.windowWidth, p.windowHeight-1);
     p.getCenterPos;
+    p.setImgScale;
   }
 
   p.getCenterPos = function() {
     p.centre = p.width*3/5;
+  }
+
+  p.setImgScale = function() {
+    p.imgScale = p.height * 0.0006;
   }
 
   p.drawFeature = function(feature, distX, distY, num) {
