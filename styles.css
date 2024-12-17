@@ -42,8 +42,8 @@ h3 {
 h4 {
    font-family: 'terminalGOpen';
    font-weight: normal;
-   font-size: 110px;
-   color: rgb(160, 160, 160);
+   font-size: 80px;
+   color: rgb(175, 175, 175);
 
    margin-top: -5px;
    margin-bottom: 0px;
@@ -137,7 +137,7 @@ body {
 }
 
 #sideBar:hover {
-   width: 270px;
+   width: 260px;
 
    overflow: hidden;
 }
@@ -155,7 +155,7 @@ body {
 
 .menuColumn {
    margin-left: 17px;
-   margin-right: 50px;
+   margin-right: 27px;
 }
 
 .menuOptions {
@@ -192,8 +192,9 @@ a {
    color: inherit;
 }
 
+/* underline thickness for hyperlinks */
 h4 u{
-   text-decoration-thickness: 9px;
+   text-decoration-thickness: 7px;
 }
 
 ::-webkit-scrollbar {

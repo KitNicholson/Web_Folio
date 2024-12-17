@@ -6,7 +6,7 @@ var yOffset = 0;
 
 let w = 40 *scale;
 let h = 96 *scale;
-let lastFrameIndex = 800;
+let lastFrameIndex = 642;
 
 function setup() {
   canvas = createCanvas(windowHeight*1.4, windowHeight-1);
@@ -15,7 +15,7 @@ function setup() {
   video.size(width, height);
   video.hide();
 
-  background(220);
+  background(0);
 
   w = width/16;
   h = height/5;
