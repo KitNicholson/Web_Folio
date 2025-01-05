@@ -14,6 +14,8 @@ var sketch = function(p) {
 
   p.randomness = 555; // how far the features can move
 
+  p.frameChange = 2;
+
   // ======================== Main Functions ======================== //
 
   p.preload = function() {
@@ -43,6 +45,7 @@ var sketch = function(p) {
   p.setup = function() {
     p.canvas = p.createCanvas(p.windowWidth-30, p.windowHeight-1);
     p.canvas.position(0,0);
+    p.frameRate(0.7);
 
     p.getCenterPos();
     console.log(p.height);
@@ -93,8 +96,8 @@ var sketch = function(p) {
     // draws the given facial feature (img) to the canvas, 
     // relative to center point (2/3*width 1/2*height)
   
-    p.randOffsetX = p.noise(0, p.frameCount/250, num) * p.randomness;
-    p.randOffsetY = p.noise(p.frameCount/250, 0 , num) * p.randomness;
+    p.randOffsetX = p.noise(0, p.frameCount/p.frameChange, num) * p.randomness;
+    p.randOffsetY = p.noise(p.frameCount/p.frameChange, 0 , num) * p.randomness;
   
     p.featureWidth = feature.width * p.imgScale;
     p.featureHeight = feature.height * p.imgScale;
