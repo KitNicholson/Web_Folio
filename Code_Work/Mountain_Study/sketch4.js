@@ -53,7 +53,7 @@ function drawHalfMountain(xOrigin, yOrigin, dirction) {
   let y = yOrigin;
   prevY = y+1; // +1 so that there is still an outline at the origin/peak
 
-  for (let x=xOrigin; 0 < x && x < width; x += dirction) {
+  for (let x=xOrigin; -1 < x && x < width; x += dirction) {
 
     // fill beneath outline, column by column
     let brightness = map(yOrigin, 0, height, 255, 0);
