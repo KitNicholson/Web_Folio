@@ -3,15 +3,17 @@
 let prevY = 0;
 let distance = 230; // how 'far away' the mountian is. far is 255 (white) close is 0 (black)
 let bckColours = [];
+let backColour;
 let numDots = 0;
-let maxDots = 5;
+let maxDots = 3;
 
 
 // ===================== Settup Function ===================== //
 
 function setup() {
-  canvas = createCanvas(windowWidth-30, windowHeight-1);
-  canvas.position(0,0);
+  console.log('Version1-Sketch4');
+
+  createCanvas(windowWidth, windowHeight-1);
   noiseDetail(8, 0.4);
 
   // add colour options for background
@@ -19,13 +21,15 @@ function setup() {
   bckColours.push(color(255,170,0)); // sunset
   bckColours.push(color(0,136,204)); // clear day
   bckColours.push(color(240,230,230)); // clouds
+
+  backColour = random(bckColours);
 }
 
 // ===================== Main Funciton ===================== //
 
 function draw() {
   //background(240,230,230);
-  background(random(bckColours));
+  background(backColour);
 
   // add holy geometry behind mountains
   // for (let i=0; i<random(3); i++) {
@@ -40,6 +44,8 @@ function draw() {
   drawManyMountains();
   // drawManyMountainsRand();
 
+  fadeBackground();
+
   noLoop();
 }
 
@@ -53,7 +59,7 @@ function drawHalfMountain(xOrigin, yOrigin, dirction) {
   let y = yOrigin;
   prevY = y+1; // +1 so that there is still an outline at the origin/peak
 
-  for (let x=xOrigin; -1 < x && x < width; x += dirction) {
+  for (let x=xOrigin; -2 < x && x < width+2; x += dirction) {
 
     // fill beneath outline, column by column
     let brightness = map(yOrigin, 0, height, 255, 0);
@@ -102,7 +108,15 @@ function drawMountain(x, y) {
   if (random(3) < 1 && numDots < maxDots) {
     fill(random(255),random(255),random(255));
     noStroke();
-    circle(x, y, random(50, height/2));
+
+    if (random(2) < 1) {
+      circle(x, y, random(50, height/2));
+    } else {
+      let w = random(50, height/2);
+      let h = random(50, height/2);
+      rect(x-(w/2), y-(h/2), w, h);
+    }
+
     numDots++;
   }
 
@@ -118,15 +132,16 @@ function drawManyMountains() {
   // a mountain is drawn at a random x point
 
   for (let y = random(height/50, height/3); y<height; y += random(height/17, height/4)) {
-    fill(255,0,0);
-    //rect(10, y, 10, 10);
-
+    
+    fadeBackground();
 
     // add holy geometry
     if (random(4.5) < 1  && numDots < maxDots) {
       fill(random(255),random(255),random(255));
       noStroke();
+
       circle(random(40, width-40), random(40, height-40), random(50, height/3));
+
       numDots++;
     }
     
@@ -143,4 +158,18 @@ function drawManyMountainsRand() {
   }
 }
 
+function fadeBackground() {
 
+  if (green(backColour) === 136) {
+    // clear sky
+    backColour.setAlpha(2);
+  } else if (green(backColour) === 170) {
+    // sunset
+    backColour.setAlpha(7);
+  } else {
+    backColour.setAlpha(40);
+  }
+
+  
+  background(backColour);
+}
