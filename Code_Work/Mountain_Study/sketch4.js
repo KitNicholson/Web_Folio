@@ -13,7 +13,9 @@ let maxDots = 3;
 function setup() {
   console.log('Version1-Sketch4');
 
-  createCanvas(windowWidth, windowHeight-1);
+  canvas = createCanvas(windowWidth-30, windowHeight);
+  canvas.position(0,0);
+
   noiseDetail(8, 0.4);
 
   // add colour options for background
@@ -167,7 +169,7 @@ function fadeBackground() {
     // sunset
     backColour.setAlpha(7);
   } else {
-    backColour.setAlpha(40);
+    backColour.setAlpha(30);
   }
 
   
