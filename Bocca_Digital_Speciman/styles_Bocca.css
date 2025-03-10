@@ -1,0 +1,73 @@
+/* ============ TEXT STYLES ============ */
+
+@font-face {
+    font-family: 'bocca';
+    src: url(Bocca.otf);
+}
+
+@font-face {
+    font-family: 'officeCodePro';
+    src: url(../assets/OfficeCodePro-Regular.otf);
+}
+
+h1 {
+    font-family: 'bocca';
+    font-weight: normal;
+    font-size: 25em;
+
+    color: white;
+
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-family: 'bocca';
+    font-weight: normal;
+    font-size: 10em;
+
+    color: white;
+
+    line-height: 120px;
+}
+
+h3 {
+    /* for grid letters */
+    font-family: 'bocca';
+    font-weight: normal;
+    font-size: 8em;
+
+    color: white;
+}
+
+p {
+    font-family: 'officeCodePro';
+}
+
+.fit {
+    white-space: nowarp;
+    display: inline;
+}
+
+/* ============ Layout ============ */
+
+#sketch-holder {
+    display:block;
+    position: fixed;
+    top: 0vw;
+    left: 0vw;
+    z-index: -1;
+}
+
+
+/* ============ MISC ============ */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a :hover {
+    color:rgb(255, 68, 0) ;
+    cursor: pointer;
+}
