@@ -15,8 +15,9 @@ var canvas
 // ======================== Main Functions ======================== //
 
 function setup() {
-  canvas = createCanvas(windowWidth-30, windowHeight-1);
+  canvas = createCanvas(windowWidth-17, windowHeight-1);
   canvas.position(0,0);
+  canvas.parent('sketch-holder');
   frameRate(60);
   angleMode(DEGREES);
 
