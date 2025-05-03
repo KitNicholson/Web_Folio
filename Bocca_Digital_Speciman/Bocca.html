@@ -10,48 +10,90 @@
     <link rel="stylesheet" href="styles_Bocca.css">
 
     <script src="../assets/p5.min.js"></script>
-    <script src="../background_Sketch.js"></script>
+    <script src="assets/sketch-V3.js"></script>
 
     <script src='fitty.min.js'></script>
+
+    <script>
+        (function () {
+            // no promise support (<=IE11)
+            if (!('Promise' in window)) {
+                return;
+            }
+    
+            // called when all fonts loaded
+            function redrawFitty() {
+                document.documentElement.classList.add('fonts-loaded');
+                fitty.fitAll();
+            }
+    
+            // CSS Font Loading API
+            function native() {
+
+                // if all fonts loaded redraw fitty
+                document.fonts.ready.then(redrawFitty);
+            }
+    
+            // FontFaceObserver
+            function fallback() {
+                var style = document.createElement('style');
+                style.textContent =
+                    '@font-face { font-family: Oswald; src: url(assets/oswald.woff2) format("woff2");}';
+                document.head.appendChild(style);
+    
+                var s = document.createElement('script');
+                s.src =
+                    'https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.standalone.js';
+                s.onload = function () {
+                    new FontFaceObserver('Oswald').load().then(redrawFitty);
+                };
+                document.body.appendChild(s);
+            }
+    
+            // Does the current browser support the CSS Font Loading API?
+            if ('fonts' in document) {
+                native();
+            } else {
+                fallback();
+            }
+        })();
+    </script>
     
 </head>
 
 <!-- style="background-color: rgb(172, 13, 13)" -->
 
-<body style="background-color: rgb(17, 16, 17)">
+<body style="background-color: rgb(17, 16, 16)">
 
-    <div id="sketch-holder"></div>
+    <!-- <div id="sketch-holder"></div> -->
 
     <div style="width: 90%; margin: auto;">
         <h1 class="fit"> bocca </h1>
     </div>
-    <p style="margin-left: 8.5vw; font-size: 25px; margin-top: 0%; color: bisque;"> A Geometric Display Font</p>
-    
-    <h3 style="font-weight: normal; text-align: center; font-kerning: 10px">
-        a b c d e f
-        <br>
-        g h i j k
-        <br>
-        l m n o p
-        <br> 
-        q r s t u 
-        <br> 
-        v w x y z
-    </h3>
 
-    <h3 style="text-align: center;">
-        1 2 3 4 5 
-        <br> 
-        6 7 8 9 0
-        <br> <Br>
-        ! ? $ # % & @
-        <br>
-        ( ) { } { } | /
-        <br>
-        + -  ÷ × = < >
-        <br>
-        . , : ; ' " ~ `
-    </h3>
+    <p style="margin-left: 13.5%; font-size: 25px; margin-top: 0%; color: bisque;"> A Geometric Display Font</p>
+    
+    <div style="width: 70%; margin-left: 15%;">
+        <h3 style="display: flex; text-align: center;">
+            a b c d e f g h i j k l m n o p q r s t u v w x y z
+            <br> <br> 
+            1 2 3 4 5 6 7 8 9 0
+        </h3>
+    </div>
+
+    <div style="width: 70%; margin-left: 15%;">
+        <h3 style="display: flex;">
+            abcdefghijj klmMnopqr sstuvwWxyz
+        </h3>
+    </div>
+
+    <h2 contenteditable="true" style="text-align: center;"> Test your words here! </h2>
+
+    <div style="width: 70%; margin-left: 15%;">
+        <h3 style="display: flex; text-align: center;">
+            ! ? $ # % & @ ( ) { } { } | / + -  ÷ × = < > . , : ; ' " ~ `
+        </h3>
+    </div>
 
     <h3 style="text-align: center;">
         Æ Ð Ñ ÿ ý Ø
@@ -75,13 +117,13 @@
         <p style="font-size: 25px; color: bisque; text-align: center;"> <u> download font here</u></p>
     </a>
 
-    <h2 contenteditable="true" style="text-align: center;"> Test your words here! </h2>
+    <div style="height: 15vw;"> </div>
+
+    <!-- http://127.0.0.1:5500/Bocca_Digital_Speciman/Bocca.html -->
 
     <script>
         fitty('.fit');
     </script>
-
-    <!-- http://127.0.0.1:5500/Bocca_Digital_Speciman/Bocca.html -->
 
 </body>
 
