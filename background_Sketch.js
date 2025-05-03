@@ -17,7 +17,8 @@ var canvas
 function setup() {
   canvas = createCanvas(windowWidth-17, windowHeight-1);
   canvas.position(0,0);
-  canvas.parent('sketch-holder');
+  // canvas.parent('sketch-holder');
+
   frameRate(60);
   angleMode(DEGREES);
 
@@ -46,7 +47,6 @@ function setup() {
   //ringColour = color(200,0,0);
 
   background(ringColour);
-
 }
 
 function draw() {
@@ -80,7 +80,7 @@ function windowResized() {
 
 function fadeBackground() {
   if (frameCount % 2 === 0) {
-    background(191,0,0, 0.6);
+    background(191,0,0,3);
   }
 }
 

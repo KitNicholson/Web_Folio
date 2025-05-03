@@ -113,6 +113,14 @@ a u:hover {
    /* background-color: rgb(199, 165, 165); */
 }
 
+#sketch-holder {
+   display:block;
+   position: fixed;
+   top: 0vw;
+   left: 0vw;
+   z-index: -1;
+}
+
 /* ============ PAGE ELEMENTS ============ */
 
 body {
