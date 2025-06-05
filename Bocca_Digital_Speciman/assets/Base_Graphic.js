@@ -2,83 +2,94 @@
 
 // values
 let minLength;
-let numRadials = 8;
-
-// images / assets
-let wdwwImage;
+let numRadials = 5;
+let radialSpacing; // defined relative to minLength in setup()
 
 // shape variables
-let shape = [];
-let shapeCenter; // dictionary with x and y as keys for position
-let radials = [];
-let radialSpacing = 40;
+
+let shape1 = [];
+let shape1Center; // dictionary with x and y as keys for position
+let wobblyCenter1; // optional shape center that can animate relative to shapeCenter
+let radials1 = [];
+
+let shape2 = [];
+let shape2Center;
+let wobblyCenter2;
+let radials2 = [];
 
 var canvas;
-
-// ============== Preload Function ============== //
 
 // ============== Setup Functions ============== //
 
 function setup() {
-  canvas = createCanvas(windowWidth-15, windowHeight);
+  canvas = createCanvas(windowWidth-15, windowHeight*1.3);
   canvas.position(0,0);
+  canvas.parent('cover-graphic');
   canvas.style('z-index', '-1');
 
-  imageMode(CENTER);
   angleMode(DEGREES);
   curveTightness(0);
 
   // make the minimum leangth the window height, unless the width is smaller
-  minLength = height
-  if (width < height) {
-    minLength = width;
+  minLength = windowHeight
+  if (windowWidth < windowHeight) {
+    minLength = windowWidth;
   }
 
-  populateShape();
-  centerAlignShape();
+  // set radial spacing
+  radialSpacing = 0.18*minLength;
 
-  spawnRadials(shape, shapeCenter, radials);
+  // set up shapes
+
+  shape1Center = {x:0.5, y: 0.54};
+  populateShape1(shape1, shape1Center);
+  centerAlignShape(shape1, shape1Center);
+  spawnRadials(shape1, shape1Center, radials1);
+  wobblyCenter1 = {x:0, y: 0};
+
+  shape2Center = {x:0.5, y: 0.53};
+  populateShape2(shape2, shape2Center);
+  centerAlignShape(shape2, shape2Center);
+  spawnRadials(shape2, shape2Center, radials2);
+  wobblyCenter2 = {x:0, y: 0};
+
 
 }
 
-function populateShape() {
+function populateShape1(shape, shapeCenter) {
   // use this funciton to give initial points to shape, and assign a center
 
   // assign points
-  shape.push({x: 0.54, y: 0.54})
-  shape.push({x: 0.5, y: 0.4});
+  shape.push({x: 0.3, y: 0.5})
 
-  shape.push({x: 0.56, y: 0.44});
-  shape.push({x: 0.6, y: 0.5});
+  shape.push({x: 0.43, y: 0.42})
+  shape.push({x: 0.5, y: 0.53})
+  shape.push({x: 0.57, y: 0.42})
 
-  shape.push({x: 0.56, y: 0.56});
-  shape.push({x: 0.5, y: 0.6});
+  shape.push({x: 0.7, y: 0.5})
 
-  shape.push({x: 0.44, y: 0.56});
-  shape.push({x: 0.4, y: 0.5});
+  shape.push({x: 0.6, y: 0.56})
+  shape.push({x: 0.4, y: 0.56})
 
-  // assign center
-  shapeCenter = {x:0.55, y: 0.55};
-
-  // scale points relative to minLength
-  for (let i=0; i<shape.length; i++) {
-    shape[i].x = shape[i].x * minLength;
-    shape[i].y = shape[i].y * minLength;
-
-    // print scaled points for testing
-    //console.log(shape[i].x, shape[i].y);
-  }
-
-  // scale center point
-  shapeCenter.x = shapeCenter.x * minLength;
-  shapeCenter.y = shapeCenter.y * minLength;
-
-  // print center for testing
-  //console.log(shapeCenter);
+  scalePoints(shape, shapeCenter);
 
 }
 
-function centerAlignShape() {
+function populateShape2(shape, shapeCenter) {
+  // use this funciton to give initial points to shape, and assign a center
+
+  // assign points
+  shape.push({x: 0.3, y: 0.51})
+
+  shape.push({x: 0.7, y: 0.51})
+
+  shape.push({x: 0.58, y: 0.58})
+  shape.push({x: 0.42, y: 0.58})
+
+  scalePoints(shape, shapeCenter);
+}
+
+function centerAlignShape(shape, shapeCenter) {
   // after the shape has been populated with points, 
   // it can optionally be alinged with the center (unless minLength is
   // equal to heigt, where it will already be centered)
@@ -88,37 +99,70 @@ function centerAlignShape() {
   }
 
   shapeCenter.x += (width - minLength)/2;
+}
 
+function scalePoints(shape, shapeCenter) {
+  // scales the points relative to the canvas
+
+  for (let i=0; i<shape.length; i++) {
+    shape[i].x = shape[i].x * minLength;
+    shape[i].y = shape[i].y * minLength;
+  }
+
+  // scale center point
+  shapeCenter.x = shapeCenter.x * minLength;
+  shapeCenter.y = shapeCenter.y * minLength;
 }
 
 // ============== Main Function ============== //
 
 function draw() {
-  background(17, 16, 17);
 
-  updateRadials(shape, shapeCenter, radials);
+  // clear previous frame
+  erasePrevFrame();
 
-  //drawReferance();
+  animateShapeCenter(shape1Center, wobblyCenter1, 0, 5, 1);
+  animateShapeCenter(shape2Center, wobblyCenter2, 50, 5, 1);
 
-  stroke(255,0,0);
+  // update raidals
+  updateRadials(shape1, wobblyCenter1, radials1);
+  updateRadials(shape2, wobblyCenter2, radials2);
+  
+
+  // set stroke styles
+  stroke(255,230,0, 200);
+  strokeWeight(0.8);
+  // noStroke();
+
+  // set colour for shape 1, and then draw the radials for shape 1
   fill(255,0,0, 45);
-
   for (let i=0; i<numRadials; i++) {
-    //drawShape(radials[i]);
-    drawRadialsWoble(radials[i]);
+    drawRadialsWoble(radials1[i], shape1Center);
   }
 
+  // set colour for shape 2, and then draw the radials for shape 2
+  fill(255, 0, 255, 20);
+  for (let i=0; i<numRadials; i++) {
+    drawRadialsWoble(radials2[i], shape2Center);
+  }
+
+  // // draw base shapes
   // fill(255);
-  // drawShape(shape);
+  // drawShape(shape1);
+  // fill(200);
+  // drawShape(shape2);
 
-
-  //circle(shapeCenter.x, shapeCenter.y, 5);
+  // draw shape center for debuging
+  fill(0,255,0);
+  // circle(shape1Center.x, shape1Center.y, 5);
+  // circle(wobblyCenter1.x, wobblyCenter1.y, 5);
+  // circle(shape2Center.x, shape2Center.y, 5);
   
 }
 
 // ============== Draw Functions ============== //
 
-function drawShape() {
+function drawShape(shape) {
   // draws a custom shape, using curves, from a given array indicating points (shape).
   // make sure the array (shape) is expected to have at least 4 points 
 
@@ -130,20 +174,17 @@ function drawShape() {
 
   for (let i=0; i<shape.length; i++) {
     curveVertex(shape[i].x, shape[i].y);
-    //circle(shape[i].x, shape[i].y, 5);
   }
 
   curveVertex(shape[0].x, shape[0].y);
   curveVertex(shape[1].x, shape[1].y);
 
-
-
   endShape();
 }
 
-function drawRadialsWoble(shape) {
-  // draws a custom shape, using curves, from a given array indicating points (shape).
-  // the points will be drawn near where they actualy are and 'wiggle' in time
+function drawRadialsWoble(shape, shapeCenter) {
+  // draws a custom shape from a given array indicating key points (shape).
+  // the points will be drawn near where they actualy are in a 'wiggle' effect
   // make sure the array (shape) is expected to have at least 4 points 
 
   let lastPoint = shape.length - 1;
@@ -153,11 +194,8 @@ function drawRadialsWoble(shape) {
   curveVertex(shape[lastPoint].x, shape[lastPoint].y);
 
   for (let i=0; i<shape.length; i++) {
-
     let dist = euclideanDist(shapeCenter, shape[i].x, shape[i].y);
-
     curveVertex(shape[i].x + getDeviNonLin(shape[i].x, dist), shape[i].y + getDeviNonLin(shape[i].y, dist));
-    //circle(shape[i].x, shape[i].y, 5);
   }
 
   let dist0 = euclideanDist(shapeCenter, shape[0].x, shape[0].y);
@@ -165,10 +203,15 @@ function drawRadialsWoble(shape) {
   let dist1 = euclideanDist(shapeCenter, shape[1].x, shape[1].y);
   curveVertex(shape[1].x + getDeviNonLin(shape[1].x, dist1), shape[1].y + getDeviNonLin(shape[1].y, dist1));
 
-
-
   endShape();
+}
 
+function erasePrevFrame() {
+  // instead of drawing a solid background each frame, the previous frame is removed
+  
+  erase();
+  rect(-10, -10, width+20, height+20); // 10px overlap around the edge of the canvas
+  noErase();
 }
 
 // ============== Helper Functions ============== //
@@ -183,16 +226,14 @@ function spawnRadials(shape, shapeCenter, radials) {
 
     // for the current radial, spawn the correct number of points
     for (let j=0; j<shape.length; j++) {
-
       radials[i].push({x:shapeCenter.x, y:shapeCenter.y});
-
     }
   }
 };
 
 function updateRadials(shape, shapeCenter, radials) {
   // updates the position of each point in the radials as related to the center
-  // radials does not need to be populated with points before this function is called
+  // spawnRadials should be called first
 
   // for every point in the shape
   for (let i=0; i<shape.length; i++) {
@@ -211,9 +252,6 @@ function updateRadials(shape, shapeCenter, radials) {
       direcY = -1;
     }
 
-    // output the angle for testing
-    //console.log(theta);
-
     let posX = shape[i].x;
     let posY = shape[i].y;
 
@@ -229,29 +267,32 @@ function updateRadials(shape, shapeCenter, radials) {
 
       radials[j][i].x = posX;
       radials[j][i].y = posY;
-
     }
   }
 };
+
+function animateShapeCenter(shapeCenter, wobblyCenter, xRange, yRange, speed) {
+  // moves wobblyCenter around shapeCenter, according to xRange, yRange, and speed
+
+  let xOffset = noise(1, frameCount* 0.006 * speed) * 2*xRange;
+  xOffset -= xRange;
+  wobblyCenter.x = shapeCenter.x + xOffset;
+
+  let yOffset = noise(3, frameCount * 0.006 * speed) * 2*yRange;
+  yOffset -= yRange;
+  wobblyCenter.y = shapeCenter.y + yOffset;
+
+}
 
 function calcAngle(opposite, adjacent) {
   return Math.atan(opposite / adjacent);
 }
 
-function getDeviation(pos) {
-  deviation = noise(pos/120, frameCount/120);
-  deviation -=0.5; // change range of deviation from (0,1), to (-0.5, 0.5);
-  deviation *= 120;
-
-  return deviation;
-}
-
 function getDeviNonLin(pos, dist) {
-  // gives a deviation that scales non-linearly based on distance(dist)
+  // gives a deviation that scales non-linearly based on distance (dist)
   deviation = noise(pos/120, frameCount/120);
   deviation -=0.5; // change range of deviation from (0,1), to (-0.5, 0.5);
   deviation *= (dist**1.1)/3;
-
   return deviation;
 }
 
@@ -273,30 +314,27 @@ function keyPressed() {
 
   // move center of shape
   if (keyCode === RIGHT_ARROW) {
-    shapeCenter.x += 10;
+    shape1Center.x += 10;
   } else if (keyCode === LEFT_ARROW) {
-    shapeCenter.x -= 10;
+    shape1Center.x -= 10;
   }
 
   // move center of shape
   if (keyCode === DOWN_ARROW) {
-    shapeCenter.y += 10;
+    shape1Center.y += 10;
   } else if (keyCode === UP_ARROW) {
-    shapeCenter.y -= 10;
+    shape1Center.y -= 10;
   }
 }
 
 
-
 //  =========== TO DO LIST == //
 
-// make code work for multiple shapes with different variables
+// make shape center move
 
-// animate colour
+// better colour controls
 
-// import letter forms - make letter forms shape
-
-// animate changes to number of radials
+// make code work for multiple shapes with different variables (namee space)
 
 // make spaz movement a variable, not magic number
 
@@ -304,6 +342,8 @@ function keyPressed() {
 
 
 // =========== DONE LIST == //
+
+// add capacity for multiple shapes in the one sketch
 
 // add euclidean distance from center
 // - wobblyness of radial

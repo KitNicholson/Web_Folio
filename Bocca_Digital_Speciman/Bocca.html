@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="styles_Bocca.css">
 
     <script src="../assets/p5.min.js"></script>
-    <script src="assets/sketch-V3.js"></script>
+    <script src="assets/Cover_Sketch.js"></script>
+    <script src="assets/Mid_Sketch copy.js"></script>
 
-    <script src='fitty.min.js'></script>
+    <script src='assets/fitty.min.js'></script>
 
     <script>
         (function () {
@@ -61,63 +62,210 @@
     
 </head>
 
-<!-- style="background-color: rgb(172, 13, 13)" -->
-
 <body style="background-color: rgb(17, 16, 16)">
 
-    <!-- <div id="sketch-holder"></div> -->
+    <div class="full_screen" id="cover-graphic">
 
-    <div style="width: 90%; margin: auto;">
-        <h1 class="fit"> bocca </h1>
+        <div style="width: 90%; margin: auto; height: 100vh;">
+            <h1 class="fit" style="line-height: 80vh;"> 
+                bocca 
+                <br>
+            </h1>
+            <p class="p1" style="margin-left: 9%; margin-top: -40px; "> A Geometric Display Font</p>
+        </div>
     </div>
 
-    <p style="margin-left: 13.5%; font-size: 25px; margin-top: 0%; color: bisque;"> A Geometric Display Font</p>
-    
-    <div style="width: 70%; margin-left: 15%;">
-        <h3 style="display: flex; text-align: center;">
-            a b c d e f g h i j k l m n o p q r s t u v w x y z
-            <br> <br> 
-            1 2 3 4 5 6 7 8 9 0
-        </h3>
-    </div>
-
-    <div style="width: 70%; margin-left: 15%;">
-        <h3 style="display: flex;">
-            abcdefghijj klmMnopqr sstuvwWxyz
-        </h3>
-    </div>
-
-    <h2 contenteditable="true" style="text-align: center;"> Test your words here! </h2>
-
-    <div style="width: 70%; margin-left: 15%;">
-        <h3 style="display: flex; text-align: center;">
-            ! ? $ # % & @ ( ) { } { } | / + -  ÷ × = < > . , : ; ' " ~ `
-        </h3>
-    </div>
-
-    <h3 style="text-align: center;">
-        Æ Ð Ñ ÿ ý Ø
-        <br>
-        À Á Â Ã Ä
-        <br>
-        Ò Ó Ô Õ Ö 
-        <br>
-        Ì Í Î Ï
-        <br>
-        Ù Ú Û Ü
-        <br>
-        È É Ê Ë
-        <br>
+    <div class="main_display">
         
-    </h3>
+        <div class="content_row">
+            <div class="grid_letters" style="margin-right: -24px;">
+                <h3>a</h3>
+                <h3>b</h3>
+                <h3>c</h3>
+                <h3>d</h3>
+                <h3 style="color: rgb(235, 210, 30)">e</h3>
+                <h3 style="color: rgb(235, 210, 30)">f</h3>
+                <h3>g</h3>
+                <h3>h</h3>
+                <h3>i</h3>
+                <h3 style="color: rgb(235, 210, 30)">j</h3>
+                <h3>k</h3>
+                <h3>l</h3>
+                <h3 style="color: rgba(255, 0, 0, 0.645);">m</h3>
+                <h3 style="color: rgb(255, 0, 0, 0.645);">M</h3>
+                <h3>n</h3>
+                <h3>o</h3>
+                <h3>p</h3>
+                <h3>q</h3>
+                <h3>r</h3>
+                <h3 style="color: rgb(235, 210, 30)">s</h3>
+                <h3>t</h3>
+                <h3>u</h3>
+                <h3>v</h3>
+                <h3 style="color: rgb(255, 0, 0, 0.645);">w</h3>
+                <h3 style="color: rgb(255, 0, 0, 0.645);">W</h3>
+                <h3>x</h3>
+                <h3>y</h3>
+                <h3>z</h3>
+            </div>
+        </div>
 
-    <div style="height: 5px;"></div>
+        <br><br><br><br><br><br>
+
+        <div class="content_row" style="justify-content: space-between;">
+            <div style="display: flex; align-items: center; width: 50%; margin-right: 30px;">
+                <p class="p2"> 
+                    <u><b>BOCCA</b> is a geometric display font,</u> loosely inspired by retro-typography and modular 
+                    typefaces. It’s development was a quick experiment in creating legible 
+                    characters from the basic shapes of the square and the circle. 
+                    <br><br>
+                    <b>Each</b> character began as square, from which circles were cut out to making mouth 
+                    like orifices. 
+                    Latter in development the triangle was introduced to allow for more variation, 
+                    and improve legibility of the characters.
+                </p>
+            </div>
+            <div class="cell">
+                <img src="assets/letter_Animation_cropped.gif" style="float: right; max-width: 100%; margin-top: 17px;">
+            </div>
+        </div>
+
+        <br><br><br><br><br><br>
+
+        <div class="content_row">
+            <div class="grid_letters" style="flex: 0 0 auto; width: 245px; padding-right: 60px;">
+                <h3>1</h3><h3>2</h3>
+                <h3>3</h3><h3>4</h3>
+                <h3>5</h3><h3>6</h3>
+                <h3>7</h3><h3>8</h3>
+                <h3>9</h3><h3>0</h3>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <h2 style="text-align: center; font-size: 12vw; margin-top: 11.8%;"> “ every world a stage " </h2>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br>
+
+
+        <div id="retro-graphic"></div>
+        <div >
+            <h1 class="fit" style="line-height: 0.8em;">retro</h1>
+            <h1 class="fit" style="line-height: 0.8em;">sci-fi</h1>
+            <h1 class="fit" style="line-height: 0.8em;">goodnes</h1>
+        </div>
+
+        <br><br><br><br>
+
+        <div>
+            <h2 style="text-align: center;"> “ Change happens very slow and very sudden ” </h2>
+        </div>
+
+        <div class="content_row">
+            <div class="grid_letters"> 
+                <h3 style="color: rgb(235, 210, 30)">!</h3>
+                <h3 style="color: rgb(235, 210, 30)">?</h3>
+                <h3>$</h3>
+                <h3>#</h3>
+                <h3>%</h3>
+                <h3 style="color: rgba(255, 0, 0, 0.645);">(</h3>
+                <h3 style="color: rgba(255, 0, 0, 0.645);">)</h3>
+                <h3>&amp;</h3>
+                <h3 style="color: rgba(235, 210, 30);">{</h3>
+                <h3 style="color: rgba(235, 210, 30);">}</h3>
+                <h3>@</h3>
+                <h3 style="color: rgba(255, 0, 0, 0.645);">[</h3>
+                <h3 style="color: rgba(255, 0, 0, 0.645);">]</h3>
+                <h3>/</h3>
+                <h3>|</h3>
+                <h3>\</h3>
+                <h3>+</h3>
+                <h3>-</h3>
+                <h3>÷</h3>
+                <h3>×</h3>
+                <h3>=</h3>
+                <h3>&lt;</h3>
+                <h3>&gt;</h3>
+                <h3 style="color: rgb(255, 0, 0, 0.645)">.</h3>
+                <h3 style="color: rgb(255, 0, 0, 0.645)">,</h3>
+                <h3>:</h3>
+                <h3>;</h3>
+                <h3>&apos;</h3>
+                <h3 style="color: rgba(235, 210, 30);">“</h3>
+                <h3 style="color: rgba(235, 210, 30);">”</h3>
+                <h3>~</h3>
+                <h3>`</h3>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br>
+
+        <div class="content_row" style="justify-content: space-between;">
+            <div>
+                <div class="grid_letters">
+                    <h3 class="accent">À</h3>
+                    <h3 class="accent">Á</h3>
+                    <h3 class="accent">Â</h3>
+                    <h3 class="accent">Ã</h3>
+                    <h3 class="accent">Ä</h3>
+                </div>
+                <div class="grid_letters">
+                    <h3 class="accent">È</h3>
+                    <h3 class="accent">É</h3>
+                    <h3 class="accent">Ê</h3>
+                    <h3 class="accent" style="margin-left: -7px;">Ë</h3>
+                </div>
+                <div class="grid_letters">
+                    <h3 class="accent">Ì</h3>
+                    <h3 class="accent">Í</h3>
+                    <h3 class="accent">Î</h3>
+                    <h3 class="accent">Ï</h3>
+                </div>
+                <div class="grid_letters">
+                    <h3 class="accent">Ò</h3>
+                    <h3 class="accent">Ó</h3>
+                    <h3 class="accent">Ô</h3>
+                    <h3 class="accent">Õ</h3>
+                    <h3 class="accent">Ö</h3>
+                </div>
+                <div class="grid_letters">
+                    <h3 class="accent">Ù</h3>
+                    <h3 class="accent">Ú</h3>
+                    <h3 class="accent">Û</h3>
+                    <h3 class="accent">Ü</h3>
+                </div>
+            </div>
+
+            <div class="grid_letters" style="flex-direction: column;">
+                <h3 class="accent">Æ</h3>
+                <h3 style="color: rgb(17, 16, 16)">Ù</h3>
+                <h3 style="color: rgb(17, 16, 16)">Ù</h3>
+                <h3 class="accent">Ø</h3>
+                <h3 style="color: rgb(17, 16, 16)">Ù</h3>
+            </div>
+
+            <div class="grid_letters" style="flex: 0 0 auto; flex-direction: column;">
+                <h3 class="accent" style="margin-left: -15px;">Ð</h3>
+                <h3 class="accent">Ñ</h3>
+                <h3 class="accent">ÿ</h3>
+                <h3 class="accent">ý</h3>
+                <h3 style="color: rgb(17, 16, 16)">Ù</h3>
+            </div>
+        </div>
+
+        <div>
+            <h2 contenteditable="true" style="text-align: center;"> Test your words here! </h2>
+        </div>
+    </div>
+
+
+    <div style="height: 8px;"></div>
 
     <a href="Bocca.otf" download>
-        <p style="font-size: 25px; color: bisque; text-align: center;"> <u> download font here</u></p>
+        <p class="p2" style="text-align: center;"> <u> download font here</u></p>
     </a>
 
-    <div style="height: 15vw;"> </div>
+    <div style="height: 10vw;"> </div>
 
     <!-- http://127.0.0.1:5500/Bocca_Digital_Speciman/Bocca.html -->
 

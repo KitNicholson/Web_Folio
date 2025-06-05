@@ -6,7 +6,7 @@ let maxRadius = 250;
 let angleBetweenPoints = 90;
 
 let time = 0;
-let speed = 1.2;
+let speed = 0.8;
 
 let ringColour;
 
@@ -18,32 +18,21 @@ function setup() {
   canvas = createCanvas(windowWidth-17, windowHeight-1);
   canvas.position(0,0);
   canvas.parent('sketch-holder');
-  frameRate(60);
+  frameRate(30);
   angleMode(DEGREES);
 
   ring.push(new Coordinate(0,0, 0, maxRadius));
   ring.push(new Coordinate(0,0, 45, maxRadius));
-  // ring.push(new Coordinate(0,0, 90, maxRadius));
   ring.push(new Coordinate(0,0, 135, maxRadius));
   ring.push(new Coordinate(0,0, 180, maxRadius));
-  // ring.push(new Coordinate(0,0, 225, maxRadius));
   ring.push(new Coordinate(0,0, 270, maxRadius));
   ring.push(new Coordinate(0,0, 315, maxRadius));
-  
-  // ring.push(new Coordinate(0,0, 0, maxRadius));
-  // ring.push(new Coordinate(0,0, 45, maxRadius));
-  // ring.push(new Coordinate(0,0, 90, maxRadius));
-  // ring.push(new Coordinate(0,0, 135, maxRadius));
-  // ring.push(new Coordinate(0,0, 180, maxRadius));
-  // ring.push(new Coordinate(0,0, 225, maxRadius));
-  // ring.push(new Coordinate(0,0, 270, maxRadius));
-  // ring.push(new Coordinate(0,0, 315, maxRadius));
 
   updateRing(ring);
-  drawLine
 
-  ringColour = color(40,0,0);
+  //ringColour = color(40,0,0);
   //ringColour = color(200,0,0);
+  ringColour = color(60, 0, 0);
 
   background(ringColour);
 
@@ -53,7 +42,7 @@ function draw() {
 
   fadeBackground();
   //background(191,0,0, 0.6);
-  //background(0, 1);
+  // background(191, 5);
 
   translate((sin(frameCount/8)+1)/3 * width, height*15/16);
   //translate(width*5/6, height*10/12);
@@ -80,38 +69,38 @@ function windowResized() {
 
 function fadeBackground() {
   if (frameCount % 2 === 0) {
-    background(191,0,0, 0.6);
+    background(131, 80, 80, 4.7);
   }
 }
 
 // ======================== Helper Functions ======================== //
 
-function drawLine(ring_) {
+// function drawLine(ring_) {
 
-  for (let i=0; i<ring_.length; i++) {
+//   for (let i=0; i<ring_.length; i++) {
     
-    let x1 = ring[i].x1;
-    let y1 = ring[i].y1; 
+//     let x1 = ring[i].x1;
+//     let y1 = ring[i].y1; 
 
-    let x2 = ring[i].x2;
-    let y2 = ring[i].y2;
+//     let x2 = ring[i].x2;
+//     let y2 = ring[i].y2;
 
     
-    stroke(170,0,0);
-    strokeWeight(1);
-    fill(0,0,0);
-    circle(x2, y2, 5);
+//     stroke(170,0,0);
+//     strokeWeight(1);
+//     fill(0,0,0);
+//     circle(x2, y2, 5);
 
-    stroke(0,50);
-    strokeWeight(0.3);
-    line(x1, y1, x2,y2);
-  }
-}
+//     stroke(0,50);
+//     strokeWeight(0.3);
+//     line(x1, y1, x2,y2);
+//   }
+// }
 
 function drawRing(ring_) {
 
   stroke(ringColour);
-  strokeWeight(3);
+  strokeWeight(5);
   noFill();
 
   beginShape();
