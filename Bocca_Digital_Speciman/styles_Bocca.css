@@ -35,13 +35,43 @@ h3 {
     /* for grid letters */
     font-family: 'bocca';
     font-weight: normal;
-    font-size: 8em;
+    font-size: 150px;
+
+    color: bisque;
+
+    padding: 0%;
+    margin: 0%;
+
+    letter-spacing: 0.16em;
+    line-height: 0.84em;
+}
+
+.accent {
+    line-height: 1em;
+}
+
+.p1 {
+    font-family: 'officeCodePro';
+    font-size: 25px; 
+    
+    color: bisque;
+}
+
+.p2 {
+    font-family: 'officeCodePro';
+    font-size: 1.2em; 
 
     color: bisque;
 }
 
-p {
-    font-family: 'officeCodePro';
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a :hover {
+    color:rgb(235, 210, 30) ;
+    cursor: pointer;
 }
 
 .fit {
@@ -51,23 +81,68 @@ p {
 
 /* ============ Layout ============ */
 
-#sketch-holder {
+.html, body {
+    margin: 0px;
+}
+
+/* #sketch-holder {
     display:block;
     position: fixed;
     top: 0vw;
     left: 0vw;
     z-index: -1;
+} */
+
+canvas {
+    position: absolute;
+    /* top: 0%; */
+    left: 0%;
 }
 
+.full_screen {
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+}
+
+.main_display {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+
+    /* background-color: rgb(160, 160, 160); */
+}
+
+.content_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* flex-wrap: wrap; */
+    align-content: flex-start;
+
+    /* background-color: brown; */
+}
+
+.grid_letters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+    align-content: flex-start;
+
+    /* background-color: blueviolet;
+    border: 2px solid #00ff11; */
+}
 
 /* ============ MISC ============ */
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-a :hover {
-    color:rgb(255, 68, 0) ;
-    cursor: pointer;
+.cell {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto; 
 }
