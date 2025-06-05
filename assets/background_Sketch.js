@@ -35,6 +35,7 @@ function setup() {
   ringColour = color(60, 0, 0);
 
   background(ringColour);
+
 }
 
 function draw() {
