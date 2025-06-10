@@ -140,20 +140,7 @@ var sketch = function(g){
     for (let i=0; i<g.numRadials; i++) {
       g.fill(230, 150, 0, 15+i*6);
       g.drawRadialsWoble(g.radials2[i], g.shape2Center);
-    }
-
-    // // draw base shapes
-    // g.fill(255);
-    // g.drawShape(g.shape1);
-    // g.fill(200);
-    // g.drawShape(g.shape2);
-
-    // draw shape center for debuging
-    // g.fill(0,255,0);
-    // g.circle(shape1Center.x, shape1Center.y, 5);
-    // g.circle(wobblyCenter1.x, wobblyCenter1.y, 5);
-    // g.circle(shape2Center.x, shape2Center.y, 5);
-    
+    }    
   }
 
   // ============== Draw Functions ============== //
@@ -237,8 +224,6 @@ var sketch = function(g){
       // find the angle between the center and that point.
       g.distX = shape[i].x - shapeCenter.x;
       g.distY = shape[i].y - shapeCenter.y;
-      // g.distX = shape[i].x - g.mouseX;
-      // g.distY = shape[i].y - g.mouseY;
       g.theta = g.calcAngle(g.distY, g.distX);
 
       g.direcX = 1;

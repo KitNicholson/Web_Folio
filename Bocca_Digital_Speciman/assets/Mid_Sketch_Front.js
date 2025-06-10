@@ -25,7 +25,6 @@ var sketch = function(g){
 
   g.setup = function() {
     g.canvas = g.createCanvas(g.windowWidth-15, g.windowHeight*1.1);
-    // g.canvas.position(0, 0);
     g.canvas.parent('retro-graphic');
     g.canvas.style('z-index', '1');
 
@@ -50,11 +49,6 @@ var sketch = function(g){
     g.spawnRadials(g.shape1, g.shape1Center, g.radials1);
     g.wobblyCenter1 = {x:0, y: 0};
 
-    // g.shape2Center = {x:0.05, y: 0.095};
-    // g.populateShape2(g.shape2, g.shape2Center);
-    // g.centerAlignShape(g.shape2, g.shape2Center);
-    // g.spawnRadials(g.shape2, g.shape2Center, g.radials2);
-    // g.wobblyCenter2 = {x:0, y: 0};
   }
 
   g.populateShape1 = function(shape, shapeCenter) {
@@ -76,25 +70,6 @@ var sketch = function(g){
     g.scalePoints(shape, shapeCenter);
 
   }
-
-  // g.populateShape2 = function(shape, shapeCenter) {
-  //   // use this funciton to give initial points to shape, and assign a center
-
-  //   // assign points
-  //   shape.push({x: 0.1, y: 0.13})
-
-  //   // shape.push({x: 0.17, y: 0.16})
-
-  //   shape.push({x: 0.27, y: 0.21})
-  //   shape.push({x: 0.3, y: 0.16})
-
-  //   shape.push({x: 0.26, y: 0.13})
-
-  //   shape.push({x: 0.2, y: 0.19})
-  //   // shape.push({x: 0.2, y: 0.51})
-
-  //   g.scalePoints(shape, shapeCenter);
-  // }
 
   g.centerAlignShape = function(shape, shapeCenter) {
     // after the shape has been populated with points,
@@ -127,50 +102,22 @@ var sketch = function(g){
 
     // clear previous frame
     g.erasePrevFrame();
-    // g.background(220);
 
     g.animateShapeCenter(g.shape1Center, g.wobblyCenter1, 0, 6.5, 0.6);
-    // g.animateShapeCenter(g.shape2Center, g.wobblyCenter2, 0, 10, 0.7);
 
     // update raidals
     g.updateRadials(g.shape1, g.wobblyCenter1, g.radials1);
-    // g.updateRadials(g.shape2, g.wobblyCenter2, g.radials2);
 
 
     // set stroke styles
     g.stroke(255,230,0, 200);
     g.strokeWeight(0.8);
-    // g.noStroke();
-
-    // // set colour for shape 2, and then draw the radials for shape 2
-    // // g.fill(255, 255, 0, 45);
-    // for (let i=0; i<g.numRadials-1; i++) {
-    //   g.fill(255, 255, 0, 70-i*9);
-    //   g.drawRadialsWoble(g.radials2[i], g.shape2Center);
-    // }
 
     // set colour for shape 1, and then draw the radials for shape 1
-    // g.fill(0, 255, 0, 45);
     for (let i=0; i<g.numRadials; i++) {
       g.fill(250, 255, 0, 10+i*8);
       g.drawRadialsWoble(g.radials1[i], g.shape1Center);
     }
-
-
-
-    // // draw base shapes
-    // g.fill(255);
-    // g.drawShape(g.shape1);
-    // g.fill(200);
-    // g.drawShape(g.shape2);
-
-    // // draw shape center for debuging
-    // g.fill(255,0,0);
-    // g.circle(g.shape1Center.x, g.shape1Center.y, 5);
-    // g.circle(g.shape2Center.x, g.shape2Center.y, 5);
-    // g.fill(0,255,0);
-    // g.circle(g.wobblyCenter1.x, g.wobblyCenter1.y, 5);
-    // g.circle(g.wobblyCenter2.x, g.wobblyCenter2.y, 5);
 
   }
 

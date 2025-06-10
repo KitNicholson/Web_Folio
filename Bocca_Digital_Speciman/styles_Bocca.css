@@ -13,7 +13,6 @@
 h1 {
     font-family: 'bocca';
     font-weight: normal;
-    /* font-size: 25em; */
 
     color: bisque;
 
@@ -88,7 +87,6 @@ a :hover {
 
 canvas {
     position: absolute;
-    /* top: 0%; */
     left: 0%;
 }
 
@@ -104,18 +102,13 @@ canvas {
     flex-direction: column;
     width: 90%;
     margin: auto;
-
-    /* background-color: rgb(160, 160, 160); */
 }
 
 .content_row {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    /* flex-wrap: wrap; */
     align-content: flex-start;
-
-    /* background-color: brown; */
 }
 
 .grid_letters {
@@ -125,9 +118,6 @@ canvas {
 
     justify-content: space-between;
     align-content: flex-start;
-
-    /* background-color: blueviolet;
-    border: 2px solid #00ff11; */
 }
 
 /* ============ MISC ============ */
@@ -181,16 +171,11 @@ canvas {
         flex-direction: column; 
         align-items: center; 
         justify-content: space-evenly; 
-        /* background-color: rgb(181, 73, 1); */
     }
 
 /* ============ Media Queries ============ */
 
 @media screen and (min-width: 1350px) {
-
-    /* body {
-        background-color: rgb(45, 45, 45);
-    } */
 
     #short_quote {
         line-height: 0.75em;
@@ -199,9 +184,7 @@ canvas {
 
 @media screen and (max-width: 900px) {
 
-    /* body {
-        background-color: rgb(68, 68, 68);
-    } */
+    /* row_2 stuff */
 
     #row_2 {
         flex-direction: column;
@@ -221,7 +204,7 @@ canvas {
         justify-content: space-around;
     }
 
-
+    /* row_3 stuff */
 
     #short_quote {
         font-size: 10vw;
@@ -258,20 +241,14 @@ canvas {
 
     #extra_accents_1 {
         flex-direction: row;
-        /* margin-right: -24.5vw; */
     }
 
     #extra_accents_2 {
         flex-direction: row;
-        /* margin-right: -25.4vw; */
     }
 }
 
 @media screen and (max-width: 600px) {
-
-    body {
-        background-color: rgb(68, 68, 68);
-    }
 
     #text_Graphic {
         height: 140vw;
