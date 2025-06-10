@@ -175,6 +175,15 @@ canvas {
     text-align: center;
 }
 
+#text_Graphic {
+        height: 110vh;
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: space-evenly; 
+        /* background-color: rgb(181, 73, 1); */
+    }
+
 /* ============ Media Queries ============ */
 
 @media screen and (min-width: 1350px) {
@@ -256,4 +265,16 @@ canvas {
         flex-direction: row;
         /* margin-right: -25.4vw; */
     }
+}
+
+@media screen and (max-width: 600px) {
+
+    body {
+        background-color: rgb(68, 68, 68);
+    }
+
+    #text_Graphic {
+        height: 140vw;
+    }
+    
 }
