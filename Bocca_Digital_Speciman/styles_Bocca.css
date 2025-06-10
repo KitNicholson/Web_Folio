@@ -83,15 +83,8 @@ a :hover {
 
 .html, body {
     margin: 0px;
+    background-color: rgb(17, 16, 16);
 }
-
-/* #sketch-holder {
-    display:block;
-    position: fixed;
-    top: 0vw;
-    left: 0vw;
-    z-index: -1;
-} */
 
 canvas {
     position: absolute;
@@ -139,10 +132,128 @@ canvas {
 
 /* ============ MISC ============ */
 
+#font_info {
+    width: 50%; 
+    margin-right: 30px;
+}
+
+#animation {
+    float: right; 
+    max-width: 100%; 
+    margin-top: 17px;
+}
+
 .cell {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     box-flex: 1;
     -webkit-flex: 1 1 auto;
     flex: 1 1 auto; 
+}
+
+#short_quote {
+    text-align: center; 
+    font-size: 12vw; 
+    margin-top: 20%;
+    margin-left: 10%;
+}
+
+#numbers {
+    flex: 0 0 auto; 
+    width: 245px;
+}
+
+#extra_accents_1 {
+    flex-direction: column;
+}
+
+#extra_accents_2 {
+    flex-direction: column;
+}
+
+#type_tester {
+    text-align: center;
+}
+
+/* ============ Media Queries ============ */
+
+@media screen and (min-width: 1350px) {
+
+    /* body {
+        background-color: rgb(45, 45, 45);
+    } */
+
+    #short_quote {
+        line-height: 0.75em;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    /* body {
+        background-color: rgb(68, 68, 68);
+    } */
+
+    #row_2 {
+        flex-direction: column;
+    }
+
+    #font_info {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    #animation {
+        float: none;
+    }
+
+    .cell {
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+
+    #short_quote {
+        font-size: 10vw;
+        line-height: 16vw;
+        margin-left: 12vw;
+        margin-top: 2%;
+        width: 60%;
+    }
+
+    .number {
+        font-size: 22vw;
+    }
+
+    #numbers {
+        width: 40%;
+    }
+
+    #row_5 {
+        font-size: 17vw;
+        line-height: 1em;
+    }
+
+    #type_tester {
+        font-size: 20vw;
+        line-height: 1em;
+    }
+
+}
+
+@media screen and (max-width: 970px) {
+    #row_7 {
+        flex-direction: column;
+    }
+
+    #extra_accents_1 {
+        flex-direction: row;
+        /* margin-right: -24.5vw; */
+    }
+
+    #extra_accents_2 {
+        flex-direction: row;
+        /* margin-right: -25.4vw; */
+    }
 }

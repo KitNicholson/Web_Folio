@@ -4,7 +4,7 @@ var sketch = function(g){
 
   // values
   g.minLength;
-  g.numRadials = 5;
+  g.numRadials = 6;
   g.radialSpacing; // defined relative to minLength in setup()
 
   // shape variables
@@ -25,8 +25,8 @@ var sketch = function(g){
 
   g.setup = function() {
     g.canvas = g.createCanvas(g.windowWidth-15, g.windowHeight*1.3);
-    g.canvas.position(0,0);
-    g.canvas.parent('cover-graphic');
+    // g.canvas.position(0, 0);
+    g.canvas.parent('retro-graphic');
     g.canvas.style('z-index', '-1');
 
     g.angleMode(g.DEGREES);
@@ -40,17 +40,17 @@ var sketch = function(g){
     }
 
     // set radial spacing
-    g.radialSpacing = 0.18*g.minLength;
+    g.radialSpacing = 0.2*g.minLength;
 
     // set up shapes
 
-    g.shape1Center = {x:0.5, y: 0.54};
-    g.populateShape1(g.shape1, g.shape1Center);
-    g.centerAlignShape(g.shape1, g.shape1Center);
-    g.spawnRadials(g.shape1, g.shape1Center, g.radials1);
-    g.wobblyCenter1 = {x:0, y: 0};
+    // g.shape1Center = {x:0.78, y: 0.9};
+    // g.populateShape1(g.shape1, g.shape1Center);
+    // g.centerAlignShape(g.shape1, g.shape1Center);
+    // g.spawnRadials(g.shape1, g.shape1Center, g.radials1);
+    // g.wobblyCenter1 = {x:0, y: 0};
 
-    g.shape2Center = {x:0.5, y: 0.52};
+    g.shape2Center = {x:0.5, y: 0.65};
     g.populateShape2(g.shape2, g.shape2Center);
     g.centerAlignShape(g.shape2, g.shape2Center);
     g.spawnRadials(g.shape2, g.shape2Center, g.radials2);
@@ -61,16 +61,14 @@ var sketch = function(g){
     // use this funciton to give initial points to shape, and assign a center
 
     // assign points
-    shape.push({x: 0.3, y: 0.5})
+    shape.push({x: 0.55, y: 0.85})
 
-    shape.push({x: 0.43, y: 0.42})
-    shape.push({x: 0.5, y: 0.53})
-    shape.push({x: 0.57, y: 0.42})
+    shape.push({x: 0.62, y: 0.87})
 
-    shape.push({x: 0.7, y: 0.5})
+    shape.push({x: 0.68, y: 0.77})
+    shape.push({x: 0.75, y: 0.88})
 
-    shape.push({x: 0.6, y: 0.56})
-    shape.push({x: 0.4, y: 0.56})
+    shape.push({x: 0.65, y: 0.91})
 
     g.scalePoints(shape, shapeCenter);
 
@@ -78,14 +76,15 @@ var sketch = function(g){
 
   g.populateShape2 = function(shape, shapeCenter) {
     // use this funciton to give initial points to shape, and assign a center
-
+ 
     // assign points
-    shape.push({x: 0.3, y: 0.51})
+    shape.push({x: 0.35, y: 0.61})
 
-    shape.push({x: 0.7, y: 0.51})
+    shape.push({x: 0.65, y: 0.61})
+    // shape.push({x: 0, y: 0.61}) /// alternative line
 
-    shape.push({x: 0.58, y: 0.58})
-    shape.push({x: 0.42, y: 0.58})
+    shape.push({x: 0.58, y: 0.68})
+    shape.push({x: 0.42, y: 0.68})
 
     g.scalePoints(shape, shapeCenter);
   }
@@ -121,12 +120,13 @@ var sketch = function(g){
 
     // clear previous frame
     g.erasePrevFrame();
+    // g.background(220);
 
-    g.animateShapeCenter(g.shape1Center, g.wobblyCenter1, 12, 0, 1);
-    g.animateShapeCenter(g.shape2Center, g.wobblyCenter2, 70, 5, 1);
+    // g.animateShapeCenter(g.shape1Center, g.wobblyCenter1, 0, 5, 1);
+    g.animateShapeCenter(g.shape2Center, g.wobblyCenter2, 50, 20, 1);
 
     // update raidals
-    g.updateRadials(g.shape1, g.wobblyCenter1, g.radials1);
+    // g.updateRadials(g.shape1, g.wobblyCenter1, g.radials1);
     g.updateRadials(g.shape2, g.wobblyCenter2, g.radials2);
     
 
@@ -135,14 +135,14 @@ var sketch = function(g){
     g.strokeWeight(0.8);
     // noStroke();
 
-    // set colour for shape 1, and then draw the radials for shape 1
-    g.fill(255,0,0, 40);
-    for (let i=0; i<g.numRadials; i++) {
-      g.drawRadialsWoble(g.radials1[i], g.shape1Center);
-    }
+    // // set colour for shape 1, and then draw the radials for shape 1
+    // g.fill(0, 255, 0, 45);
+    // for (let i=0; i<g.numRadials; i++) {
+    //   g.drawRadialsWoble(g.radials1[i], g.shape1Center);
+    // }
 
     // set colour for shape 2, and then draw the radials for shape 2
-    g.fill(255, 0, 255, 20);
+    g.fill(255, 0, 100, 20);
     for (let i=0; i<g.numRadials; i++) {
       g.drawRadialsWoble(g.radials2[i], g.shape2Center);
     }
@@ -153,11 +153,12 @@ var sketch = function(g){
     // g.fill(200);
     // g.drawShape(g.shape2);
 
-    // draw shape center for debuging
-    g.fill(0,255,0);
-    // g.circle(shape1Center.x, shape1Center.y, 5);
-    // g.circle(wobblyCenter1.x, wobblyCenter1.y, 5);
-    // g.circle(shape2Center.x, shape2Center.y, 5);
+    // // draw shape center for debuging
+    // g.fill(0,255,0);
+    // g.circle(g.shape1Center.x, g.shape1Center.y, 5);
+    // g.circle(g.wobblyCenter1.x, g.wobblyCenter1.y, 5);
+    // g.circle(g.shape2Center.x, g.shape2Center.y, 5);
+    // g.circle(g.wobblyCenter2.x, g.wobblyCenter2.y, 5);
     
   }
 

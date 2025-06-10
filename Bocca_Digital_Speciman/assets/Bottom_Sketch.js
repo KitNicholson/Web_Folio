@@ -24,13 +24,13 @@ var sketch = function(g){
   // ============== Setup Functions ============== //
 
   g.setup = function() {
-    g.canvas = g.createCanvas(g.windowWidth-15, g.windowHeight*1.3);
-    // g.canvas.position(0, 0);
-    g.canvas.parent('retro-graphic');
-    g.canvas.style('z-index', '1');
+    g.canvas = g.createCanvas(g.windowWidth-15, g.windowHeight*1.2);
+    g.canvas.parent('back-graphic');
+    g.canvas.style('z-index', '-1');
 
     g.angleMode(g.DEGREES);
     g.curveTightness(0);
+    g.frameRate(20);
 
     // make the minimum leangth the window height, unless the width is smaller
     g.minLength = g.windowHeight
@@ -39,17 +39,17 @@ var sketch = function(g){
     }
 
     // set radial spacing
-    g.radialSpacing = 0.18*g.minLength;
+    g.radialSpacing = 0.3*g.minLength;
 
     // set up shapes
 
-    g.shape1Center = {x:0.5, y: 0.64};
+    g.shape1Center = {x:1.5, y: 0.68};
     g.populateShape1(g.shape1, g.shape1Center);
     g.centerAlignShape(g.shape1, g.shape1Center);
     g.spawnRadials(g.shape1, g.shape1Center, g.radials1);
     g.wobblyCenter1 = {x:0, y: 0};
 
-    g.shape2Center = {x:0.5, y: 0.53};
+    g.shape2Center = {x:-0.8, y: 0.68};
     g.populateShape2(g.shape2, g.shape2Center);
     g.centerAlignShape(g.shape2, g.shape2Center);
     g.spawnRadials(g.shape2, g.shape2Center, g.radials2);
@@ -60,16 +60,12 @@ var sketch = function(g){
     // use this funciton to give initial points to shape, and assign a center
 
     // assign points
-    shape.push({x: 0.3, y: 0.6})
+    shape.push({x: 1.2, y: 0.7})
 
-    shape.push({x: 0.43, y: 0.52})
-    shape.push({x: 0.5, y: 0.63})
-    shape.push({x: 0.57, y: 0.52})
+    shape.push({x: 1.33, y: 0.62})
+    shape.push({x: 1.4, y: 0.73})
 
-    shape.push({x: 0.7, y: 0.6})
-
-    shape.push({x: 0.6, y: 0.66})
-    shape.push({x: 0.4, y: 0.66})
+    shape.push({x: 1.3, y: 0.76})
 
     g.scalePoints(shape, shapeCenter);
 
@@ -79,12 +75,12 @@ var sketch = function(g){
     // use this funciton to give initial points to shape, and assign a center
 
     // assign points
-    shape.push({x: 0.3, y: 0.51})
+    shape.push({x: -0.5, y: 0.68})
 
-    shape.push({x: 0.7, y: 0.51})
+    shape.push({x: 0, y: 0.5})
 
-    shape.push({x: 0.58, y: 0.58})
-    shape.push({x: 0.42, y: 0.58})
+    shape.push({x: -0.12, y: 0.75})
+    shape.push({x: -0.28, y: 0.75})
 
     g.scalePoints(shape, shapeCenter);
   }
@@ -120,10 +116,9 @@ var sketch = function(g){
 
     // clear previous frame
     g.erasePrevFrame();
-    // g.background(220);
 
-    g.animateShapeCenter(g.shape1Center, g.wobblyCenter1, 0, 5, 1);
-    g.animateShapeCenter(g.shape2Center, g.wobblyCenter2, 50, 5, 1);
+    g.animateShapeCenter(g.shape1Center, g.wobblyCenter1, 0, 0, 1);
+    g.animateShapeCenter(g.shape2Center, g.wobblyCenter2, 0, 0, 1);
 
     // update raidals
     g.updateRadials(g.shape1, g.wobblyCenter1, g.radials1);
@@ -136,14 +131,14 @@ var sketch = function(g){
     // noStroke();
 
     // set colour for shape 1, and then draw the radials for shape 1
-    g.fill(255,255,0, 45);
     for (let i=0; i<g.numRadials; i++) {
+      g.fill(255, 0, 0, 15+i*10);
       g.drawRadialsWoble(g.radials1[i], g.shape1Center);
     }
 
     // set colour for shape 2, and then draw the radials for shape 2
-    g.fill(255, 0, 255, 20);
     for (let i=0; i<g.numRadials; i++) {
+      g.fill(230, 150, 0, 15+i*6);
       g.drawRadialsWoble(g.radials2[i], g.shape2Center);
     }
 
@@ -154,7 +149,7 @@ var sketch = function(g){
     // g.drawShape(g.shape2);
 
     // draw shape center for debuging
-    g.fill(0,255,0);
+    // g.fill(0,255,0);
     // g.circle(shape1Center.x, shape1Center.y, 5);
     // g.circle(wobblyCenter1.x, wobblyCenter1.y, 5);
     // g.circle(shape2Center.x, shape2Center.y, 5);
@@ -292,8 +287,8 @@ var sketch = function(g){
   g.getDeviNonLin = function(pos, dist) {
     // gives a deviation that scales non-linearly based on distance (dist)
     g.deviation = g.noise(pos/120, g.frameCount/120);
-    g.deviation -=0.5; // change range of deviation from (0,1), to (-0.5, 0.5);
-    g.deviation *= (dist**1.1)/3;
+    g.deviation -= 0.5; // change range of deviation from (0,1), to (-0.5, 0.5);
+    g.deviation *= ((dist**1.1)/3) *0.8;
     return g.deviation;
   }
 
