@@ -125,12 +125,12 @@ a u:hover {
 .project_title {
    grid-area: 1/1 / span 2/ span 3; 
    position: fixed;
-   /* background-color: aqua; */
+   background-color: aqua;
 }
 
 .project_description {
    grid-area: 2/1 / span 2 / span 3;
-   /* background-color: aqua; */
+   background-color: red;
 }
 
 /* ============ PAGE ELEMENTS ============ */
