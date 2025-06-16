@@ -84,8 +84,9 @@ a u:hover {
 
 .mainPara {
    margin-top: 1vw;
-   column-count: 2;
-   column-width: 8px;
+   margin-right: 3%;
+   column-width: 30em;
+   column-gap: 60px;
 }
 
 .infoTextBL {
@@ -119,6 +120,17 @@ a u:hover {
    top: 0vw;
    left: 0vw;
    z-index: -1;
+}
+
+.project_title {
+   grid-area: 1/1 / 2/4; 
+   position: fixed;
+   /* background-color: aqua; */
+}
+
+.project_description {
+   grid-area: 2/1 / span 2 / span 3;
+   /* background-color: aqua; */
 }
 
 /* ============ PAGE ELEMENTS ============ */
@@ -218,6 +230,16 @@ h4 u{
    background-color: rgb(135, 135, 135);
 }
 
-@media only screen and (max-width: 800px) {
-   /* for mobile screens */
+/* for mobile screens */
+
+@media only screen and (max-width: 700px) {
+   
+   .grid {
+      display: grid;
+      grid-template-columns: 100%;
+   }
+
+   .project_description {
+      grid-area: 4/1 / span 2 / span 3;
+   }
  }
