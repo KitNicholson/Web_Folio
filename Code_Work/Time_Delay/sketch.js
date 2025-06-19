@@ -29,7 +29,7 @@ function draw() {
   //HalfNHalf();
   faceSlice();
 
-  console.log(vHistory.length);
+  // console.log(vHistory.length);
 }
 
 function saveFrame() {
