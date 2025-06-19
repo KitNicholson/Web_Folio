@@ -34,6 +34,7 @@
 
     #image_1 {
         grid-area: 13/1 / span 6 / span 1; 
+        direction: rtl;
     }
 
     #image_2 {
@@ -51,8 +52,7 @@
 
     #image_5 {
         grid-area: 35/1 / span 10 / span 1;
-        display: flex;
-        justify-content: center;
+        direction: rtl;
     }
 
     #image_6 {
@@ -61,8 +61,8 @@
 
     #image_7 {
         grid-area: 49/1 / span 4 / span 1; 
-        display: flex;
-        justify-content: center
+        /* display: flex;
+        justify-content: center */
     }
     
 }

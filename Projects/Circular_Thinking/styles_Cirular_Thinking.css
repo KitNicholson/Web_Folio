@@ -63,8 +63,6 @@
 
     #image_2 {
         grid-area: 22/1 / span 8 / span 1;
-        display: flex;
-        justify-content: center;
     }
 
     #image_5 {
@@ -85,8 +83,6 @@
 
     #image_9 {
         grid-area: 42/1 / span 9 / span 1;
-        display: flex;
-        justify-content: center;
     }
 
     #image_10 {

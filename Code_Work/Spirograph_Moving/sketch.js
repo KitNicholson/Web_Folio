@@ -33,7 +33,7 @@ function setup() {
   // ring.push(new Coordinate(0,0, 315, maxRadius));
 
   updateRing(ring);
-  console.log(ring);
+  // console.log(ring);
   drawLine
   background(0);
 }
@@ -76,6 +76,7 @@ function drawLine(ring_) {
 function drawRing(ring_) {
 
   stroke(0);
+  strokeWeight(3);
   noFill();
 
   beginShape();
@@ -99,7 +100,7 @@ function updateRing(ring_) {
 
     //get angle
     angle = 360 * (i / ring_.length)
-    console.log(angle);
+    // console.log(angle);
 
     time += deltaTime/1000 * speed;
     ring[i].radius = (sin(angle + time) + cos(angle/2 + time)) * (maxRadius/2);
