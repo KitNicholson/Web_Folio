@@ -29,7 +29,7 @@ h2 {
    color: white;
 
    margin-top: -5px;
-   margin-bottom: 0px;
+   /* margin-bottom: 0px; */
 }
 
 h3 {
@@ -123,8 +123,8 @@ a u:hover {
 }
 
 .project_title {
-   grid-area: 1/1 / span 2/ span 3; 
    position: fixed;
+   top: 2vh;
    /* background-color: aqua; */
 }
 
@@ -238,6 +238,11 @@ h4 u{
       display: grid;
       grid-template-columns: 100%;
    }
+   
+   /* .project_title {
+      grid-area: 10/2 / span 2/ span 1;
+      background-color: rgb(255, 0, 0);
+   } */
 
    .project_description {
       grid-area: 4/1 / span 2 / span 3;
