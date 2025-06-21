@@ -1,0 +1,17 @@
+
+#sub_title {
+    margin-left: 186px; 
+    font-size: 22px;
+}
+
+@media screen and (max-width:725px) {
+
+    body {
+        background-color: rgb(73, 73, 73);
+    }
+
+    #sub_title {
+        margin-left: 0px; 
+    }
+   
+}

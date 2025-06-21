@@ -14,8 +14,9 @@ h1 {
    font-family: 'terminalGOpen';
    font-weight: normal;
    font-size: 120px;
-   /* text-align: right; */
+   line-height: 110px;
    color: white;
+   /* background-color: aquamarine; */
 
    margin-top: -5px;
    margin-bottom: 0px;
@@ -25,11 +26,10 @@ h2 {
    font-family: 'terminalGOpen';
    font-weight: normal;
    font-size: 75px;
-   /* text-align: right; */
    color: white;
 
    margin-top: -5px;
-   /* margin-bottom: 0px; */
+   margin-bottom: 0px;
 }
 
 h3 {
@@ -126,6 +126,8 @@ a u:hover {
    position: fixed;
    top: 2vh;
    /* background-color: aqua; */
+   margin-right: -50px;
+
 }
 
 .project_description {
@@ -233,16 +235,16 @@ h4 u{
 /* for mobile screens */
 
 @media only screen and (max-width: 700px) {
+
+   h1 {
+      font-size: 17vw;
+      line-height: 16vw;
+   }
    
    .grid {
       display: grid;
       grid-template-columns: 100%;
    }
-   
-   /* .project_title {
-      grid-area: 10/2 / span 2/ span 1;
-      background-color: rgb(255, 0, 0);
-   } */
 
    .project_description {
       grid-area: 4/1 / span 2 / span 3;
