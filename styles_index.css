@@ -1,22 +1,35 @@
 
 #sub_title {
+    margin-top: 0px;
     margin-left: 186px; 
     font-size: 22px;
+    line-height: 30px;
+}
+
+#title_box {
+    grid-area: 3/1 / span 1 / span 3; 
+    margin-left: 20px;
 }
 
 @media screen and (max-width:725px) {
 
-    body {
+    /* body {
         background-color: rgb(129, 0, 0);
+    } */
+
+    #title_box {
+        /* grid-area: 3/1 / span 1 / span 1; */
+        margin-left: 0px;
     }
 
     h1 {
-      font-size: 17vw;
-      line-height: 16vw;
+      font-size: 20vw;
+      line-height: 18vw;
     }
 
     #sub_title {
         margin-left: 0.6vw; 
+        margin-top: 17px;
     }
    
 }
