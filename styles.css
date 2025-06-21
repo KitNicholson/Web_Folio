@@ -124,9 +124,9 @@ a u:hover {
 
 .project_title {
    position: fixed;
+   width: 80vw;
    top: 2vh;
-   /* background-color: aqua; */
-   margin-right: -50px;
+   background-color: aqua;
 
 }
 

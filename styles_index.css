@@ -28,8 +28,9 @@
     }
 
     #sub_title {
-        margin-left: 0.6vw; 
         margin-top: 17px;
+        margin-left: 0.6vw; 
+        margin-right: 2vw;
     }
    
 }
