@@ -57,22 +57,22 @@ var sketch = function(p) {
   p.draw = function() {
 
     p.erase();
-    p.rect(-10, -10, p.width+20, p.width+20);
+    p.rect(-10, -10, p.width+20, p.height+20);
     p.noErase();
 
     // fill(255,0,0);
     // noStroke();
     // circle(centre-5, height/2, 10);
 
-    p.drawFeature(p.hair, 100, -40, 0);
+    p.drawFeature(p.hair, 100, -40, 0, 2.6);
 
-    p.drawFeature(p.nose, 30, 280, 2);
+    p.drawFeature(p.nose, 30, 280, 2, 1);
 
-    p.drawFeature(p.mouth, 30, 580, 1);
+    p.drawFeature(p.mouth, 30, 580, 1, 1);
 
-    p.drawFeature(p.eyeLeft, -200, 0, 3);
+    p.drawFeature(p.eyeLeft, -200, 0, 3, 1);
 
-    p.drawFeature(p.eyeRight, 200, 0, 4);
+    p.drawFeature(p.eyeRight, 200, 0, 4, 1);
 
   }
 
@@ -92,15 +92,15 @@ var sketch = function(p) {
     p.imgScale = p.height * 0.0006;
   }
 
-  p.drawFeature = function(feature, distX, distY, num) {
+  p.drawFeature = function(feature, distX, distY, num, scale) {
     // draws the given facial feature (img) to the canvas, 
     // relative to center point (2/3*width 1/2*height)
   
     p.randOffsetX = p.noise(0, p.frameCount/p.frameChange, num) * p.randomness;
     p.randOffsetY = p.noise(p.frameCount/p.frameChange, 0 , num) * p.randomness;
   
-    p.featureWidth = feature.width * p.imgScale;
-    p.featureHeight = feature.height * p.imgScale;
+    p.featureWidth = feature.width * p.imgScale * scale;
+    p.featureHeight = feature.height * p.imgScale * scale;
     p.featureX = p.centre - p.featureWidth/2 + (distX+p.randOffsetX) * p.imgScale;
     p.featureY = p.height/3 - p.featureHeight/2 + (distY+p.randOffsetY) * p.imgScale;
     p.image(feature, p.featureX, p.featureY, p.featureWidth, p.featureHeight);
