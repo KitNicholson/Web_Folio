@@ -12,19 +12,15 @@
 }
 
 @media screen and (max-width:725px) {
-
-    /* body {
-        background-color: rgb(129, 0, 0);
-    } */
+    
+    h1 {
+      font-size: 20vw;
+      line-height: 18vw;
+    }
 
     #title_box {
         /* grid-area: 3/1 / span 1 / span 1; */
         margin-left: 0px;
-    }
-
-    h1 {
-      font-size: 20vw;
-      line-height: 18vw;
     }
 
     #sub_title {
