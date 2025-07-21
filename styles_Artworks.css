@@ -1,0 +1,53 @@
+/* posittion images */
+
+#image_1 {
+    grid-area: 2/2 / span 4 / span 1; 
+    margin-top: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    /* direction: ltr; */
+    /* background-color: aqua; */
+}
+
+#image_2 {
+    grid-area: 5/3 / span 4 / span 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#image_3 {
+    grid-area: 11/1 / span 4 / span 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#image_4 {
+    grid-area: 7/1 / span 3 / span 2;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#image_5 {
+    grid-area: 11/2 / span 3 / span 2;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 940px) {
+
+    
+}
+
+/* mobile */
+
+@media screen and (max-width: 700px) {
+
+    h1 {
+      font-size: 20vw;
+      line-height: 18vw;
+    }
+
+    #image_1 {
+        grid-area:  99/1 / span 5 / span 1;
+    }
+}
