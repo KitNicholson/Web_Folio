@@ -63,8 +63,10 @@ p {
    color: white;
 }
 
+/* sidebar text */
 .menu p {
    color: black;
+   line-height: 1.13em;
 }
 
 a p:hover {
@@ -185,7 +187,7 @@ body {
 
 .menuOptions {
    /* color: white; */
-   margin-top: 15px;
+   margin-top: 18px;
 }
 
 iframe {
@@ -235,10 +237,6 @@ h4 u{
 }
 
 /* for mobile screens */
-
-@media screen and (max-width: 725px) {
-   
-}
 
 @media only screen and (max-width: 700px) {
    
