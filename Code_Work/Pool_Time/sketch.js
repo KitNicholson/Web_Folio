@@ -13,7 +13,7 @@ let ambiance;
 function preload() {
 
   font = loadFont('Satoshi-Black.otf');
-  ambiance = loadSound('Pool_Ambience.WAV');
+  ambiance = loadSound('Pool_Ambience.wav');
 
 }
 

@@ -14,7 +14,7 @@ let ambience;
 // ==================== Setup Functions ==================== //
 
 function preload() {
-  ambience = loadSound('Ambience.WAV');
+  ambience = loadSound('Ambience.wav');
 }
 
 function setup() {
