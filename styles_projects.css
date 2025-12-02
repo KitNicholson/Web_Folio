@@ -1,6 +1,6 @@
 /* posittion cells */
 
-#cell_1{
+#cell_1 {
     grid-area: 2/1 / span 1 / span 1;
 }
 
@@ -8,7 +8,7 @@
     grid-area: 3/1 / span 3 / span 1;
 }
 
-#cell_2{
+#cell_2 {
     grid-area: 3/2 / span 1 / span 1;
 }
 
@@ -16,7 +16,7 @@
     grid-area: 4/2 / span 3 / span 1;
 }
 
-#cell_3{
+#cell_3 {
     grid-area: 2/3 / span 1 / span 1;
 }
 
@@ -24,7 +24,7 @@
     grid-area: 3/3 / span 3 / span 1;
 }
 
-#cell_4{
+#cell_4 {
     grid-area: 5/3 / span 1 / span 1;
 }
 
@@ -32,7 +32,7 @@
     grid-area: 6/3 / span 3 / span 1;
 }  
 
-#cell_5{
+#cell_5 {
     grid-area: 5/1 / span 1 / span 1;
 }
 
@@ -40,7 +40,7 @@
     grid-area: 6/1 / span 3 / span 1;
 }
 
-#cell_6{
+#cell_6 {
     grid-area: 6/2 / span 1 / span 1;
 }
 
@@ -48,7 +48,7 @@
     grid-area: 7/2 / span 3 / span 1;
 }
 
-#cell_7{
+#cell_7 {
     grid-area: 8/3 / span 1 / span 1;
 }
 
@@ -56,11 +56,19 @@
     grid-area: 9/3 / span 3 / span 1;
 }
 
+#cell_8 {
+    grid-area: 8/1 / span 1 / span 1;
+}
+
+#cell_8_thumbnail {
+    grid-area: 9/1 / span 3 / span 1;
+}
+
 /* tablets */
 
 @media screen and (max-width:885px) {
 
-    #cell_1{
+    #cell_1 {
         grid-area: 4/1 / span 1 / span 1;
     }
 
@@ -68,7 +76,7 @@
         grid-area: 5/1 / span 3 / span 1;
     }
 
-    #cell_2{
+    #cell_2 {
         grid-area: 5/2 / span 1 / span 1;
     }
 
@@ -76,7 +84,7 @@
         grid-area: 6/2 / span 3 / span 1;
     }
 
-    #cell_3{
+    #cell_3 {
         grid-area: 4/3 / span 1 / span 1;
     }
 
@@ -84,7 +92,7 @@
         grid-area: 5/3 / span 3 / span 1;
     }
 
-    #cell_4{
+    #cell_4 {
         grid-area: 7/3 / span 1 / span 1;
     }
 
@@ -92,7 +100,7 @@
         grid-area: 8/3 / span 3 / span 1;
     }  
 
-    #cell_5{
+    #cell_5 {
         grid-area: 7/1 / span 1 / span 1;
     }
 
@@ -100,7 +108,7 @@
         grid-area: 8/1 / span 3 / span 1;
     }
 
-    #cell_6{
+    #cell_6 {
         grid-area: 8/2 / span 1 / span 1;
     }
 
@@ -108,12 +116,20 @@
         grid-area: 9/2 / span 3 / span 1;
     }
 
-    #cell_7{
+    #cell_7 {
         grid-area: 10/3 / span 1 / span 1;
     }
 
     #cell_7_thumbnail {
         grid-area: 11/3 / span 3 / span 1;
+    }
+
+    #cell_8 {
+        grid-area: 10/1 / span 1 / span 1;
+    }
+
+    #cell_8_thumbnail {
+        grid-area: 11/1 / span 3 / span 1;
     }
 }
 
@@ -126,7 +142,7 @@
       line-height: 18vw;
     }
 
-    #cell_1{
+    #cell_1 {
         grid-area: 6/1 / span 1 / span 1;
     }
 
@@ -134,7 +150,7 @@
         grid-area: 7/1 / span 6 / span 1;
     }
 
-    #cell_2{
+    #cell_2 {
         grid-area: 14/1 / span 1 / span 1;
     }
 
@@ -142,7 +158,7 @@
         grid-area: 15/1 / span 6 / span 1;
     }
 
-    #cell_3{
+    #cell_3 {
         grid-area: 22/1 / span 1 / span 1;
     }
 
@@ -150,7 +166,7 @@
         grid-area: 23/1 / span 6 / span 1;
     }
 
-    #cell_4{
+    #cell_4 {
         grid-area: 30/1 / span 1 / span 1;
     }
 
@@ -158,7 +174,7 @@
         grid-area: 31/1 / span 6 / span 1;
     }
 
-    #cell_5{
+    #cell_5 {
         grid-area: 38/1 / span 1 / span 1;
     }
 
@@ -166,7 +182,7 @@
         grid-area: 39/1 / span 6 / span 1;
     }
 
-    #cell_6{
+    #cell_6 {
         grid-area: 46/1 / span 1 / span 1;
     }
 
@@ -174,12 +190,20 @@
         grid-area: 47/1 / span 6 / span 1;
     }
 
-    #cell_7{
+    #cell_7 {
         grid-area: 54/1 / span 1 / span 1;
     }
 
     #cell_7_thumbnail {
         grid-area: 55/1 / span 6 / span 1;
+    }
+
+    #cell_8 {
+        grid-area: 62/1 / span 1 / span 1;
+    }
+
+    #cell_8_thumbnail {
+        grid-area: 63/1 / span 6 / span 1;
     }
 
 }
