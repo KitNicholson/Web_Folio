@@ -10,10 +10,15 @@
    src: url(assets/OfficeCodePro-Regular.otf);
 }
 
+@font-face {
+   font-family: 'Monitor-G3';
+   src: url(assets/Monitor-G3.otf);
+}
+
 h1 {
-   font-family: 'terminalGOpen';
+   font-family: 'Monitor-G3';
    font-weight: normal;
-   font-size: 120px;
+   font-size: 125px;
    line-height: 110px;
    color: white;
    /* background-color: aquamarine; */
@@ -23,9 +28,10 @@ h1 {
 }
 
 h2 {
-   font-family: 'terminalGOpen';
+   font-family: 'Monitor-G3';
    font-weight: normal;
    font-size: 75px;
+   line-height: 67px;
    color: white;
 
    margin-top: -5px;
