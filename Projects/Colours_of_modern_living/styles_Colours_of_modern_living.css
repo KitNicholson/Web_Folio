@@ -29,36 +29,36 @@
 @media screen and (max-width: 700px) {
 
     #CoML_description {
-        grid-area: 6/1 / span 2 / span 1;
+        grid-area: 7/1 / span 2 / span 1;
     }
 
-    #image_1 {
-        grid-area: 21/1 / span 14 / span 1; 
+    #image_2 {
+        grid-area: 17/1 / span 5 / span 1;
         /* display: flex;
         justify-content: center; */
     }
 
-    #image_2 {
-        grid-area: 16/1 / span 5 / span 1;
+    #image_1 {
+        grid-area: 22/1 / span 14 / span 1; 
         /* display: flex;
         justify-content: center; */
     }
 
     #image_3 {
-        grid-area: 35/1 / span 6 / span 1;
+        grid-area: 36/1 / span 6 / span 1;
     }
 
     #image_4 {
-        grid-area: 41/1 / span 11 / span 1;
+        grid-area: 42/1 / span 11 / span 1;
         direction: rtl;
     }
 
     #image_5 {
-        grid-area: 65/1 / span 6 / span 1; 
+        grid-area: 66/1 / span 6 / span 1; 
     }
 
     #image_6 {
-        grid-area: 52/1 / span 13 / span 1;
+        grid-area: 53/1 / span 13 / span 1;
     }
 
 }
