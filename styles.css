@@ -1,32 +1,35 @@
 /* ============ TEXT STYLES ============ */
 
 @font-face {
-   font-family: 'terminalGOpen';
-   src: url(assets/terminal-grotesque_open.otf);
-}
-
-@font-face {
    font-family: 'officeCodePro';
    src: url(assets/OfficeCodePro-Regular.otf);
 }
 
+@font-face {
+   font-family: 'Monitor-G3';
+   src: url(assets/Monitor-G3.otf);
+}
+
 h1 {
-   font-family: 'terminalGOpen';
+   font-family: 'Monitor-G3';
    font-weight: normal;
-   font-size: 120px;
-   line-height: 110px;
+   font-size: 150px;
+   line-height: 115px;
    color: white;
    /* background-color: aquamarine; */
+   text-shadow: 0px 0px 25px rgb(94, 94, 94);
 
    margin-top: -5px;
    margin-bottom: 0px;
 }
 
 h2 {
-   font-family: 'terminalGOpen';
+   font-family: 'Monitor-G3';
    font-weight: normal;
-   font-size: 75px;
+   font-size: 100px;
+   line-height: 67px;
    color: white;
+   text-shadow: 0px 0px 15px rgb(130, 130, 130);
 
    margin-top: -5px;
    margin-bottom: 0px;
@@ -38,28 +41,9 @@ h3 {
    font-size: 20pt;
 }
 
-
-/* really this is h3, but h3 was already created and used on multiple pages */
-h4 {
-   font-family: 'terminalGOpen';
-   font-weight: normal;
-   font-size: 80px;
-   color: rgb(175, 175, 175);
-
-   margin-top: -5px;
-   margin-bottom: 0px;
-}
-
-.title {
-   font-family: 'terminalGOpen';
-   font-size: 120px;
-   text-align: right;
-   color: white;
-}
-
 p {
    font-family:'officeCodePro';
-   font-size: 12pt;
+   font-size: 14pt;
    color: white;
 }
 
@@ -69,19 +53,18 @@ p {
    line-height: 1.13em;
 }
 
-a p:hover {
-   color:rgb(255, 68, 0) ;
-   cursor: pointer;
+a:hover{
+   color:rgb(255, 68, 0);
 }
 
-a h4:hover {
-   color:rgb(255, 68, 0) ;
-   cursor: pointer;
+a p:hover {
+   color:rgb(255, 68, 0);
+   /* cursor: pointer; */
 }
 
 a u:hover {
-   color:rgb(255, 68, 0) ;
-   cursor: pointer;
+   color:rgb(255, 68, 0);
+   /* cursor: pointer; */
 }
 
 .mainPara {
@@ -124,6 +107,15 @@ a u:hover {
    z-index: -1;
 }
 
+.page_title {
+   /* position: fixed; */
+   width: 85vw;
+   top: 30000vh;
+   margin-left: 0px;
+   padding-right: 0px;
+   /* background-color: aqua; */
+}
+
 .project_title {
    position: fixed;
    width: 85vw;
@@ -131,7 +123,6 @@ a u:hover {
    margin-left: 0px;
    padding-right: 0px;
    /* background-color: aqua; */
-
 }
 
 .project_description {
@@ -166,7 +157,7 @@ body {
 #sideBar:hover {
    width: 260px;
 
-   overflow: hidden;
+   /* overflow: hidden; */
 }
 
 .menu {
@@ -185,9 +176,15 @@ body {
    margin-right: 27px;
 }
 
+#sideBar:hover .menuColumn {
+   color: white;
+   margin-left: 0;
+   margin-right: 17px;
+}
+
 .menuOptions {
    /* color: white; */
-   margin-top: 18px;
+   margin-top: 15px;
 }
 
 iframe {
@@ -220,13 +217,12 @@ a {
 }
 
 /* underline thickness for hyperlinks */
-h4 u{
-   text-decoration-thickness: 7px;
-}
 
 ::-webkit-scrollbar {
    background-color: rgb(0, 0, 0);
 }
+
+/* custom scroll bar */
 
 ::-webkit-scrollbar-thumb {
    background-color: rgb(86, 86, 86);
@@ -235,6 +231,31 @@ h4 u{
 ::-webkit-scrollbar-thumb:hover {
    background-color: rgb(140, 140, 140);
 }
+
+/* custom cursor */
+
+/* code modified from Geeks For Geeks*/
+/* https://www.geeksforgeeks.org/javascript/how-to-create-custom-cursor-using-css */
+
+/* * {
+   cursor: none;
+} */
+
+/* .custom-cursor {
+   position: absolute;
+   z-index: 99;
+   top: 0;
+   left: 0;
+
+   width: 12px;
+   height: 12px;
+
+   border: 1px solid black;
+   border-radius: 50%;
+   background-color: white;
+
+   pointer-events: none;
+} */
 
 /* for mobile screens */
 
