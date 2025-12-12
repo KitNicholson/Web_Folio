@@ -30,26 +30,26 @@
 @media screen and (max-width: 700px) {
 
     #image_1 {
-        grid-area: 13/1 / span 6 / span 1; 
+        grid-area: 15/1 / span 6 / span 1; 
     }
 
     #image_2 {
-        grid-area: 19/1 / span 6 / span 1;
+        grid-area: 21/1 / span 6 / span 1;
     }
 
     #image_3 {
-        grid-area: 25/1 / span 6 / span 1; 
+        grid-area: 27/1 / span 6 / span 1; 
     }
 
     #image_4 {
-        grid-area: 31/1 / span 6 / span 1;
+        grid-area: 33/1 / span 6 / span 1;
     }
 
     #image_5 {
-        grid-area: 37/1 / span 4 / span 1;
+        grid-area: 39/1 / span 4 / span 1;
     }
 
     #image_6 {
-        grid-area: 41/1 / span 6 / span 1; 
+        grid-area: 43/1 / span 6 / span 1; 
     }
 }

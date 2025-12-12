@@ -42,39 +42,39 @@
     }
 
     #image_1 {
-        grid-area: 16/1 / span 6 / span 1; 
+        grid-area: 19/1 / span 6 / span 1; 
         direction: rtl;
     }
 
     #image_2 {
-        grid-area: 22/1 / span 11 / span 1; 
+        grid-area: 25/1 / span 11 / span 1; 
     }
 
     #image_3 {
-        grid-area: 33/1 / span 6 / span 1; 
+        grid-area: 36/1 / span 6 / span 1; 
         direction: rtl;
     }
 
     #image_4 {
-        grid-area: 39/1 / span 7 / span 1; 
+        grid-area: 42/1 / span 7 / span 1; 
     }
 
     #image_5 {
-        grid-area: 46/1 / span 6 / span 1; 
+        grid-area: 49/1 / span 6 / span 1; 
     }
 
     #image_7 {
-        grid-area: 52/1 / span 11 / span 1; 
+        grid-area: 55/1 / span 11 / span 1; 
         direction: ltr;
     }
 
     #image_8 {
-        grid-area: 63/1 / span 6 / span 1; 
+        grid-area: 66/1 / span 6 / span 1; 
         direction: rtl;
     }
 
     #image_6 {
-        grid-area: 69/1 / span 11 / span 1; 
+        grid-area: 72/1 / span 11 / span 1; 
     }
 
     

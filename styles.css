@@ -232,33 +232,6 @@ a {
    background-color: rgb(140, 140, 140);
 }
 
-/* custom cursor */
-
-/* code modified from Geeks For Geeks*/
-/* https://www.geeksforgeeks.org/javascript/how-to-create-custom-cursor-using-css */
-
-/* * {
-   cursor: none;
-} */
-
-/* .custom-cursor {
-   position: absolute;
-   z-index: 99;
-   top: 0;
-   left: 0;
-
-   width: 12px;
-   height: 12px;
-
-   border: 1px solid black;
-   border-radius: 50%;
-   background-color: white;
-
-   pointer-events: none;
-} */
-
-/* for mobile screens */
-
 @media only screen and (max-width: 700px) {
    
    .grid {
@@ -268,5 +241,10 @@ a {
 
    .project_description {
       grid-area: 4/1 / span 2 / span 3;
+   }
+
+   h2{
+      font-size: 87px;
+      line-height: 64px;
    }
  }

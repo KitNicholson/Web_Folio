@@ -33,32 +33,32 @@
     }
 
     #image_2 {
-        grid-area: 17/1 / span 5 / span 1;
+        grid-area: 20/1 / span 5 / span 1;
         /* display: flex;
         justify-content: center; */
     }
 
     #image_1 {
-        grid-area: 22/1 / span 14 / span 1; 
+        grid-area: 25/1 / span 14 / span 1; 
         /* display: flex;
         justify-content: center; */
     }
 
     #image_3 {
-        grid-area: 36/1 / span 6 / span 1;
+        grid-area: 39/1 / span 6 / span 1;
     }
 
     #image_4 {
-        grid-area: 42/1 / span 11 / span 1;
+        grid-area: 45/1 / span 11 / span 1;
         direction: rtl;
     }
 
-    #image_5 {
-        grid-area: 66/1 / span 6 / span 1; 
+    #image_6 {
+        grid-area: 56/1 / span 13 / span 1;
     }
 
-    #image_6 {
-        grid-area: 53/1 / span 13 / span 1;
+    #image_5 {
+        grid-area: 69/1 / span 6 / span 1; 
     }
 
 }
