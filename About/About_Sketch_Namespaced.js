@@ -79,7 +79,7 @@ var sketch = function(p) {
 
     p.drawFeature(p.eyeRight, 200, 0, 4, 1);
 
-    console.log(p.frameCount)
+    // console.log(p.frameCount)
     if (p.frameCount % 2 === 0) {
 
       // every so often change one of the features
@@ -139,7 +139,7 @@ var sketch = function(p) {
       p.rand = p.round(p.random(1,5)); // one less than number of possible options
       p.headPath = 'About/Heads/Head_' + p.rand + '.png';
       p.head = p.loadImage(p.headPath);
-      console.log('changed head');
+      // console.log('changed head');
 
     } else if (p.rand < 2) {
 
@@ -147,7 +147,7 @@ var sketch = function(p) {
       p.rand = p.round(p.random(1,5)); // one less than number of possible options
       p.mouthPath = 'About/Mouths/Mouth_' + p.rand + '.png';
       p.mouth = p.loadImage(p.mouthPath);
-      console.log('changed mouth');
+      // console.log('changed mouth');
 
     } else if (p.rand < 3) {
 
@@ -155,7 +155,7 @@ var sketch = function(p) {
       p.rand = p.round(p.random(1,5)); // one less than number of possible options
       p.nosePath = 'About/Noses/Nose_' + p.rand + '.png';
       p.nose = p.loadImage(p.nosePath);
-      console.log('changed nose');
+      // console.log('changed nose');
 
     } else if (p.rand < 4) {
 
@@ -164,7 +164,7 @@ var sketch = function(p) {
       p.eyeLeftPath = 'About/Left_eyes/Left_eye_' + p.rand + '.png';
       p.eyeLeft = p.loadImage(p.eyeLeftPath);
 
-      console.log('changed left eye');
+      // console.log('changed left eye');
 
     } else {
 
@@ -173,7 +173,7 @@ var sketch = function(p) {
       p.eyeRightPath = 'About/Right_eyes/Right_eye_' + p.rand + '.png';
       p.eyeRight = p.loadImage(p.eyeRightPath);
 
-      console.log('changed right eye');
+      // console.log('changed right eye');
       
     }
     
