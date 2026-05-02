@@ -77,6 +77,13 @@
     grid-area: 12/2 / span 2 / span 1;
 }
 
+#cell_12 {
+    grid-area: 11/3 / span 1 / span 1;
+}
+#cell_12_thumbnail {
+    grid-area: 12/3 / span 2 / span 1;
+}
+
 /* tablet */
 
 @media screen and (max-width: 940px) {
@@ -242,6 +249,13 @@
         grid-area: 66/1 / span 1 / span 1;
     }
     #cell_11_thumbnail {
+        grid-area: 67/1 / span 5 / span 1;
+    }
+
+    #cell_12 {
+        grid-area: 66/1 / span 6 / span 1;
+    }
+    #cell_12_thumbnail {
         grid-area: 67/1 / span 5 / span 1;
     }
 
