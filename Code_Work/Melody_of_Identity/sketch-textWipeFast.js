@@ -57,7 +57,7 @@ let pageScrollIncriment = 0.5;
 
 function preload() {
 
-  nuagesGris = loadSound('assets/Nuages.MP3');
+  nuagesGris = loadSound('assets/Nuages_Gris.MP3');
 
   liszt = loadImage('assets/Liszt.jpg');
 
