@@ -57,7 +57,7 @@ let pageScrollIncriment = 0.5;
 
 function preload() {
 
-  nuagesGris = loadSound('assets/Nuages_Gris.mp3');
+  //nuagesGris = loadSound('assets/Nuages_Gris.mp3');
 
   liszt = loadImage('assets/Liszt.jpg');
 
@@ -150,7 +150,7 @@ function draw() {
 
   // start audio
   if (frameCount === 1) {
-    nuagesGris.loop();
+    //nuagesGris.loop();
   }
 
   blendMode(BLEND);
