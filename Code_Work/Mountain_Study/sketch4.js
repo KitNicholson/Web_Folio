@@ -13,7 +13,7 @@ let maxDots = 3;
 function setup() {
   console.log('Version1-Sketch4');
 
-  canvas = createCanvas(windowWidth-30, windowHeight);
+  canvas = createCanvas(windowWidth-1, windowHeight);
   canvas.position(0,0);
 
   noiseDetail(8, 0.4);

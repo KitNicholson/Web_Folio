@@ -165,7 +165,7 @@ function setup() {
   accentColr2 = turquise;
 
   // Setup Canvas
-  canvas = createCanvas(windowWidth - 50, windowHeight-1);
+  canvas = createCanvas(windowWidth-1, windowHeight);
   canvas.position(0,0);
   frameRate(fr);
   audioSting.playMode("sustain");
