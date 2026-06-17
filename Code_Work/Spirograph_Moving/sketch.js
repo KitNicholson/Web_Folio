@@ -11,7 +11,7 @@ let speed = 1.5;
 // ======================== Main Functions ======================== //
 
 function setup() {
-  canvas = createCanvas(windowWidth - 30, windowHeight - 1);
+  canvas = createCanvas(windowWidth-1, windowHeight);
   canvas.position(0,0);
   angleMode(DEGREES);
 

@@ -27,7 +27,7 @@ let spawnArea; // distance from one corner of spawn area to the other
 // ================= Setup Functions ================= //
 
 function setup() {
-  createCanvas(windowWidth-50, windowHeight);
+  createCanvas(windowWidth-1, windowHeight);
   frameRate(60);
   pickSketchColours();
 

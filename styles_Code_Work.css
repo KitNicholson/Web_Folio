@@ -84,6 +84,10 @@
     grid-area: 12/3 / span 2 / span 1;
 }
 
+#end_Space {
+    grid-area: 14/1 / span 1 / span 3;
+}
+
 /* tablet */
 
 @media screen and (max-width: 940px) {
@@ -163,6 +167,14 @@
     }
     #cell_11_thumbnail {
         grid-area: 14/2 / span 2 / span 1;
+    }
+
+    #cell_12 {
+        grid-area: 13/3 / span 1 / span 1;
+    }
+
+    #cell_12_thumbnail {
+        grid-area: 14/3 / span 2 / span 1;
     }
 }
 
@@ -253,10 +265,14 @@
     }
 
     #cell_12 {
-        grid-area: 66/1 / span 6 / span 1;
+        grid-area: 72/1 / span 1 / span 1;
     }
     #cell_12_thumbnail {
-        grid-area: 67/1 / span 5 / span 1;
+        grid-area: 73/1 / span 5 / span 1;
+    }
+
+    #end_Space {
+        grid-area: 78/1 / span 1 / span 1;
     }
 
 }

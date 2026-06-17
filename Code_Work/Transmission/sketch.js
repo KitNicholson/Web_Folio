@@ -109,7 +109,7 @@ const Link3 = {
 ////////////////////////////////// MAIN FUNCTIONS //////////////////////////////////
 
 function setup() {
-  canvas = createCanvas(windowWidth-30, windowHeight-1);
+  canvas = createCanvas(windowWidth-1, windowHeight);
   canvas.position(0,0);
 
   frameRate(FR)

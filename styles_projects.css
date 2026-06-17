@@ -206,4 +206,8 @@
         grid-area: 63/1 / span 6 / span 1;
     }
 
+    #end_Space {
+        grid-area: 69/1 / span 1 / span 1;
+    }
+
 }

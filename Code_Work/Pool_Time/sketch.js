@@ -19,7 +19,7 @@ function preload() {
 
 
 function setup() {
-  createCanvas(windowWidth - 1, windowHeight - 1);
+  createCanvas(windowWidth-1, windowHeight);
 
   word_1 = font.textToPoints(
     'Relaxing', 
