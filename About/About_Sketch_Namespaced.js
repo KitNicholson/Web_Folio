@@ -43,7 +43,7 @@ var sketch = function(p) {
   }
 
   p.setup = function() {
-    p.canvas = p.createCanvas(p.windowWidth-30, p.windowHeight-1);
+    p.canvas = p.createCanvas(p.windowWidth-1, p.windowHeight);
     p.canvas.position(0,0);
     p.frameRate(1.2);
     // p.frameRate(30);
