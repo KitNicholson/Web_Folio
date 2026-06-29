@@ -1,5 +1,6 @@
 
 1 - Make hovers work approprietly on mobile
+1.5 - scratch that, delete hovers and use onClick()
 
 RESOURCES
 https://www.prowebdesign.ro/how-to-deal-with-hover-on-touch-screen-devices/

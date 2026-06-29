@@ -161,10 +161,12 @@ body {
    height: 130vh;
 
    background-color: white;
+
+   transition: 0.5s;
 }
 
 #sideBar:hover {
-   width: 245px;
+   width: 270px;
 }
 
 .menu {
@@ -174,22 +176,13 @@ body {
    /* position: relative;
    left: 0;
    bottom: 0; */
-
-   height: 200px;
-   overflow: hidden;
-}
-
-#sideBar:hover .menu {
-   height: auto;
 }
 
 .menuColumn {
    display: flex;
    flex-direction: column;
-   margin-top: 27px;
-
    gap: 6.5px;
-
+   margin-top: 27px;
    margin-left: 17px;
    /* margin-right: 0px; */
 }
@@ -197,12 +190,21 @@ body {
 #sideBar:hover .menuColumn {
    flex-direction: row;
    gap: 3px;
+
+   margin-left: 23px;
 }
 
 .menuOptions {
    /* color: white; */
+   width: 600px;
    margin-top: 15px;
-   margin-left: 17px;
+   margin-left: 500px;
+
+   transition: 0.5s;
+}
+
+#sideBar:hover .menuOptions{
+   margin-left: 40px;
 }
 
 iframe {
@@ -275,7 +277,7 @@ a {
 
    #sideBar:hover {
       width: 130vw;
-      height: 290px;
+      height: 325px;
    }
 
    .menu {
@@ -289,12 +291,19 @@ a {
 
       gap: 3px;
 
-      margin-top: 10px;
-      margin-left: 17px;
+      margin-top: 9px;
+      margin-left: 23px; /* match with #sideBar:hover .menucolumn */
+
+      transition: 0.5s;
+   }
+
+   #sideBar:hover .menuColumn {
+      margin-top: 27px;
    }
 
    .menuOptions {
-      margin-top: 9px;
+      margin-top: 12px;
+      margin-left: 40px;
    }
 
    .project_description {
