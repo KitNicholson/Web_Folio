@@ -156,7 +156,6 @@ body {
    top: 0;
    right: 0;
 
-
    width: 50px;
    height: 130vh;
 
@@ -178,7 +177,7 @@ body {
    bottom: 0; */
 }
 
-.menuColumn {
+#menuColumn {
    display: flex;
    flex-direction: column;
    gap: 6.5px;
@@ -187,14 +186,14 @@ body {
    /* margin-right: 0px; */
 }
 
-#sideBar:hover .menuColumn {
+#sideBar:hover #menuColumn {
    flex-direction: row;
    gap: 3px;
 
    margin-left: 23px;
 }
 
-.menuOptions {
+#menuOptions {
    /* color: white; */
    width: 600px;
    margin-top: 15px;
@@ -203,7 +202,7 @@ body {
    transition: 0.5s;
 }
 
-#sideBar:hover .menuOptions{
+#sideBar:hover #menuOptions{
    margin-left: 27px;  /* must match itslef in media query */
 }
 
@@ -285,23 +284,23 @@ a {
       flex-direction: column;
    }
 
-   .menuColumn {
+   #menuColumn {
       display: flex;
       flex-direction: row;
 
       gap: 3px;
 
       margin-top: 9px;
-      margin-left: 23px; /* match with #sideBar:hover .menucolumn */
+      margin-left: 23px; /* match with #sideBar:hover #menuColumn */
 
       transition: 0.5s;
    }
 
-   #sideBar:hover .menuColumn {
+   #sideBar:hover #menuColumn {
       margin-top: 27px;
    }
 
-   .menuOptions {
+   #menuOptions {
       margin-top: 12px;
       margin-left: 27px;
    }

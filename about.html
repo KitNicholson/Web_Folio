@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KN - About</title>
     <link rel="icon" href="assets/Favicon.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"><script src="scripts.js"></script>
     <link rel="stylesheet" href="styles_about.css">
 
+    <script src="scripts.js"></script>
     <script src="assets/p5.min.js"></script>
-    
     <script src="assets/background_Sketch.js"></script>
     <script src="About/About_Sketch_Namespaced.js"></script>
 
@@ -41,17 +41,17 @@
         </div>
     </div>
     
-    <div id="sideBar">
+    <div id="sideBar" onclick="toggleSidebar('sideBar', 'menuColumn', 'menuOptions')">
         <div class="menu">
 
-            <div class="menuColumn">
+            <div id="menuColumn">
                 <div class="mock_h3">M</div>
                 <div class="mock_h3">E</div>
                 <div class="mock_h3">N</div>
                 <div class="mock_h3">U</div>
             </div>
 
-            <div class="menuOptions">
+            <div id="menuOptions">
                 <a href="index.html"> <u> <p> Home </p> </u> </a>
                 <a href="projects.html"> <p> <u> Graphic Design </u> </p> </a>
                 <a href="Code_Work.html"> <p> <u> Creative Coding </u> </p> </a>
