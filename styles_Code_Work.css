@@ -84,8 +84,22 @@
     grid-area: 12/3 / span 2 / span 1;
 }
 
+#cell_13 {
+    grid-area: 14/1 / span 1 / span 1;
+}
+#cell_13_thumbnail {
+    grid-area: 15/1 / span 2 / span 1;
+}
+
+#cell_14 {
+    grid-area: 14/2 / span 1 / span 1;
+}
+#cell_14_thumbnail {
+    grid-area: 15/2 / span 2 / span 1;
+}
+
 #end_Space {
-    grid-area: 14/1 / span 1 / span 3;
+    grid-area: 17/1 / span 1 / span 3;
 }
 
 /* tablet */

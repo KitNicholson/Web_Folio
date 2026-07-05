@@ -21,37 +21,75 @@ function preload() {
 function setup() {
   createCanvas(windowWidth-1, windowHeight);
 
-  word_1 = font.textToPoints(
-    'Relaxing', 
-    width*0.17, 
-    height*0.19, 
-    130,
-    {sampleFactor: 0.12}
-  );
+  if (windowWidth < 870) {
 
-  word_2 = font.textToPoints(
-    'in', 
-    width*0.28, 
-    height*0.48, 
-    90,
-    {sampleFactor: 0.14}
-  );
+      word_1 = font.textToPoints(
+      'Relaxing', 
+      windowWidth*0, 
+      windowHeight*0.19, 
+      80,
+      {sampleFactor: 0.12}
+    );
 
-  word_3 = font.textToPoints(
-    'the', 
-    width*0.5, 
-    height*0.4, 
-    90,
-    {sampleFactor: 0.14}
-  );
-  
-  word_4 = font.textToPoints(
-    'Pool', 
-    width*0.43, 
-    height*0.73, 
-    150, 
-    {sampleFactor: 0.12}
-  );
+    word_2 = font.textToPoints(
+      'in', 
+      windowWidth*0.18, 
+      windowHeight*0.48, 
+      70,
+      {sampleFactor: 0.14}
+    );
+
+    word_3 = font.textToPoints(
+      'the', 
+      windowWidth*0.4, 
+      windowHeight*0.4, 
+      70,
+      {sampleFactor: 0.14}
+    );
+    
+    word_4 = font.textToPoints(
+      'Pool', 
+      windowWidth*0.3, 
+      windowHeight*0.73, 
+      80, 
+      {sampleFactor: 0.12}
+    );
+
+  } else {
+
+    word_1 = font.textToPoints(
+      'Relaxing', 
+      windowWidth*0.17, 
+      windowHeight*0.19, 
+      130,
+      {sampleFactor: 0.12}
+    );
+
+    word_2 = font.textToPoints(
+      'in', 
+      windowWidth*0.28, 
+      windowHeight*0.48, 
+      90,
+      {sampleFactor: 0.14}
+    );
+
+    word_3 = font.textToPoints(
+      'the', 
+      windowWidth*0.5, 
+      windowHeight*0.4, 
+      90,
+      {sampleFactor: 0.14}
+    );
+    
+    word_4 = font.textToPoints(
+      'Pool', 
+      windowWidth*0.43, 
+      windowHeight*0.73, 
+      150, 
+      {sampleFactor: 0.12}
+    );
+
+  }
 
   words = [word_1, word_2, word_3, word_4];
 
