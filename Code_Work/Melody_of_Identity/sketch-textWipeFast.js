@@ -101,7 +101,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0,0);
   frameRate(30);
   imageMode(CENTER); // due to using copy() annotations are still drawn from the top left corner
 

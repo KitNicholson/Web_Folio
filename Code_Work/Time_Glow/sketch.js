@@ -21,7 +21,8 @@ let stepRate = 1.2;
 // ================= Setup ================= //
 
 function setup() {
-  createCanvas(windowWidth-1, windowHeight);
+  canvas = createCanvas(windowWidth-1, windowHeight);
+  canvas.position(0,0);
   frameRate(60);
   angleMode(DEGREES);
   colorMode(HSB);

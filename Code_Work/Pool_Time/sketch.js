@@ -19,7 +19,8 @@ function preload() {
 
 
 function setup() {
-  createCanvas(windowWidth-1, windowHeight);
+  canvas = createCanvas(windowWidth-1, windowHeight);
+  canvas.position(0,0);
 
   if (windowWidth < 870) {
 

@@ -37,7 +37,8 @@ let newloop;
 // ================ Setup Functions ================ //
 
 function setup() {
-  createCanvas(windowWidth-1, windowHeight-1);
+  canvas = createCanvas(windowWidth-1, windowHeight-1);
+  canvas.position(0,0);
   frameRate(60);
 
   strokeCap(SQUARE);

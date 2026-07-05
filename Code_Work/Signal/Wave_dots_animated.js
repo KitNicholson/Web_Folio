@@ -18,7 +18,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth-1, windowHeight);
+  canvas = createCanvas(windowWidth-1, windowHeight);
+  canvas.position(0,0);
   frameRate(30);
   angleMode(DEGREES)
   noiseDetail(2, 0.5);
