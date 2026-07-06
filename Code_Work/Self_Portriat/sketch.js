@@ -102,8 +102,8 @@ const strand5 = {
 // =================== FUNCTIONS =================== //
 
 function preload() {
-  amTypeLight = loadFont('data/AmericanTypewriterStd_Light.ttf');
-  amTypeMedItal = loadFont('data/ITC_American_Typewriter_Std_Medium_Italic.otf');
+  amTypeLight = loadFont('Data/AmericanTypewriterStd_Light.ttf');
+  amTypeMedItal = loadFont('Data/ITC_American_Typewriter_Std_Medium_Italic.otf');
 }
 
 function setup() {
