@@ -1,0 +1,31 @@
+Mountain Study
+- add reload button
+- add button to save images
+
+Pool Time
+- click to make ripples
+- add inflateable to the Pool
+- add some way to trigger (start/stop) audio
+
+signal
+- make signal more intense around where the the mouse is
+
+silks
+- colour controls,
+- delete/restart option
+- mouse drawing controls
+
+Time GLow
+- Colour options, one sided, double sided, roving and set colours
+- when present, move towards the mouse, else follow pattern
+- more pattern options
+- pattern 1 - infinity
+- pattern 2 - wave rows
+- pattern 3 - circle
+- patterm 4 - square/diamond
+
+transmission
+- drawable version
+- drag to move points
+- delete / restart
+

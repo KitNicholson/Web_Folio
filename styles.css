@@ -102,14 +102,18 @@ body {
    grid-area: 1/1 / span 1 / span 1;
    /* background-color: aliceblue; */
 
-   margin: 8px;
+   margin: 2vw;
 }
 
 .grid {
    display: grid;
    grid-template-columns: repeat(3, minmax(0, 1fr));
    grid-auto-rows: 9vw;
-   column-gap: 8px;
+
+   /* margin-left: 1%; */
+   width: 100%; /* width should be equal to: 100 - (2 * margin-left) */
+
+   column-gap: 1.6vw;
    row-gap: 8px;
 }
 
@@ -260,6 +264,11 @@ a {
    .grid {
       display: grid;
       grid-template-columns: 100%;
+
+      margin-bottom: 50px;
+
+      /* row-gap: 8px; */
+      
    }
 
    #sideBar {

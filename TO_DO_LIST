@@ -1,9 +1,36 @@
 
-1 - Make hovers work approprietly on mobile
-1.5 - scratch that, delete hovers and use onClick()
+== TO DO =========================
 
+Edit about me description
+
+Add info / controls to creative coding projects
+by: on side bar add description + list controls below menue options
+== related issue;
+MAKE CREATIVE CODING MORE INTERACTIVE
+
+add texture/background animations to other pages
+
+edit project descriptions, add text to follow on
+
+make entry thumbnails clickable, and add hover effects to them
+
+add more animations to the website
+
+fix sidebar transition 
+by: locking top position of menu options
+
+Deal with Face Delay camera issues
+
+
+
+
+== DONE STUFF ====================
+
+Entries for creative coding are squished too close together. Fix it
+by: re-style gird row spacing / changing image sizes for graphic design
+
+Make hovers work approprietly on mobile
+scratch that, delete hovers and use onClick()
 RESOURCES
 https://www.prowebdesign.ro/how-to-deal-with-hover-on-touch-screen-devices/
 https://stackoverflow.com/questions/22559756/changing-hover-to-touch-click-for-mobile-devices
-
-2 - Deal with Face Delay camera issues
