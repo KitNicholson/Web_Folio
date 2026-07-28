@@ -1,23 +1,15 @@
 
 == TO DO =========================
 
-Edit about me description
-
-Add info / controls to creative coding projects
-by: on side bar add description + list controls below menue options
-== related issue;
 MAKE CREATIVE CODING MORE INTERACTIVE
 
 add texture/background animations to other pages
 
-edit project descriptions, add text to follow on
-
 make entry thumbnails clickable, and add hover effects to them
-
+== related issue
 add more animations to the website
 
-fix sidebar transition 
-by: locking top position of menu options
+edit project descriptions, add text to follow on
 
 Deal with Face Delay camera issues
 
@@ -25,6 +17,14 @@ Deal with Face Delay camera issues
 
 
 == DONE STUFF ====================
+
+fix sidebar transition 
+by: locking top position of menu options
+
+Add info / controls to creative coding projects
+by: on side bar add description + list controls below menue options
+
+Edit about me description
 
 Entries for creative coding are squished too close together. Fix it
 by: re-style gird row spacing / changing image sizes for graphic design
