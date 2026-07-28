@@ -618,7 +618,7 @@ function keyPressed() {
 
     deletText();
 
-  } else if (key === "Enter"){
+  } else if (key === "s" || key === "S"){
     // spawn default words for each scene
 
     if (currentScene === 0) {
@@ -658,7 +658,7 @@ function keyPressed() {
     // draws an outline
     toggleOutline();
 
-  } else if (key === "a") {
+  } else if (key === "a" || key === "A") {
     // a triggers animation
 
     animateTextSize = !animateTextSize;
@@ -674,6 +674,18 @@ function keyPressed() {
     accentColr1 = gold;
   } else if (key === "c") {
     accentColr1 = turquise;
+  }
+
+  if (key === 'd' || key === 'D') {
+    // save canvas as image
+
+    // Source - https://stackoverflow.com/a/23394552
+    // Posted by Andrew Mao
+    // Retrieved 2026-07-28, License - CC BY-SA 3.0
+    const d = Date.now();
+
+    let fileName = ('Word_as_Image_' + d);
+    saveCanvas(fileName);
   }
 
   selectSceneKey();

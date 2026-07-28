@@ -44,6 +44,7 @@ function draw() {
   // drawMountain(250, 200);
 
   drawManyMountains();
+  drawManyMountains();
   // drawManyMountainsRand();
 
   fadeBackground();
@@ -130,9 +131,13 @@ function drawMountain(x, y) {
 }
 
 function drawManyMountains() {
+
+  // reset variables
+  distance = 230;
+  numDots = 0;
+
   // at random intervals from top to bottom, 
   // a mountain is drawn at a random x point
-
   for (let y = random(height/50, height/3); y<height; y += random(height/17, height/4)) {
     
     fadeBackground();
@@ -174,4 +179,41 @@ function fadeBackground() {
 
   
   background(backColour);
+}
+
+// ===================== Control Functions ===================== //
+
+function keyPressed() {
+  
+  if (key === 'a' || key === 'A') {
+    console.log('add more stuff');
+
+    // draw mountains
+    drawManyMountains();
+  }
+
+  if (key === 'g' || key === 'G') {
+
+    console.log('generate new image');
+
+    // randomise background colour
+    backColour = random(bckColours);
+    background(backColour);
+
+    // draw mountains
+    drawManyMountains();
+    drawManyMountains();
+  }
+
+  if (key === 'd' || key === 'D') {
+    // save image
+
+    // Source - https://stackoverflow.com/a/23394552
+    // Posted by Andrew Mao
+    // Retrieved 2026-07-28, License - CC BY-SA 3.0
+    const d = Date.now();
+
+    let fileName = ('Mountain_Sketch_' + d);
+    saveCanvas(fileName);
+  }
 }

@@ -22,26 +22,26 @@ function toggleSidebar(sideBarID, menuColumnID, menuOptionsID) {
     // on desktop
     if (width > 700) {
 
-        if (parseInt(sideBar.style.width) > 50) {
-            sideBar.style.width = '50px'; // match this to #sideBar
+        // if (parseInt(sideBar.style.width) > 50) {
+        //     sideBar.style.width = '50px'; // match this to #sideBar
 
-            // match these to #menuColumn
-            menuColumn.style.flexDirection = 'column';
-            menuColumn.style.gap = '6.5px';
-            menuColumn.style.marginLeft = '17px';
+        //     // match these to #menuColumn
+        //     menuColumn.style.flexDirection = 'column';
+        //     menuColumn.style.gap = '6.5px';
+        //     menuColumn.style.marginLeft = '17px';
 
-            menuOptions.style.marginLeft = '500px' // match this to #menuOptions
+        //     menuOptions.style.marginLeft = '500px' // match this to #menuOptions
 
-        } else {
-            sideBar.style.width = '250px'; // match this to #sideBar:hover
+        // } else {
+        //     sideBar.style.width = '250px'; // match this to #sideBar:hover
 
-            // match these to #sideBar:hover #menuColumn
-            menuColumn.style.flexDirection = 'row';
-            menuColumn.style.gap = '3px';
-            menuColumn.style.marginLeft = '23px';
+        //     // match these to #sideBar:hover #menuColumn
+        //     menuColumn.style.flexDirection = 'row';
+        //     menuColumn.style.gap = '3px';
+        //     menuColumn.style.marginLeft = '23px';
 
-            menuOptions.style.marginLeft = '27px' // match this to #sideBar:hover #menuOptions
-        }
+        //     menuOptions.style.marginLeft = '27px' // match this to #sideBar:hover #menuOptions
+        // }
     }
 
     // on mobile
