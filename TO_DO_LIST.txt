@@ -1,9 +1,12 @@
 
 == TO DO =========================
 
-MAKE CREATIVE CODING MORE INTERACTIVE
+GIVE CREATIVE CODING SKETCHES MORE INTERACTIONS
 
 add texture/background animations to other pages
+- Gdes: text / image frames that are growing and shrinking
+- Coding: ocean of pixelated cursors, wobbeling moving
+- other stuff: loopy spirals?
 
 make entry thumbnails clickable, and add hover effects to them
 == related issue

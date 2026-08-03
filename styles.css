@@ -145,7 +145,7 @@ body {
 }
 
 .project_title {
-   position: fixed;
+   /* position: fixed; */
    width: 85vw;
    top: 2vh;
    margin-left: 0px;
@@ -159,6 +159,14 @@ body {
 }
 
 /* ============ PAGE ELEMENTS ============ */
+
+#sketch-holder {
+   display:block;
+   position: fixed;
+   top: 0vw;
+   left: 0vw;
+   z-index: -1;
+}
 
 #sideBar {
    position: fixed;
