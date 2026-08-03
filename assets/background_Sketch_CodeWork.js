@@ -27,7 +27,7 @@ function setup() {
 
   
   if (width > 500) {
-    img = loadImage('assets/cursor_BIG.png');
+    img.resize(90,0);
   } else {
     img.resize(50,0);
   }

@@ -3,10 +3,7 @@
 
 GIVE CREATIVE CODING SKETCHES MORE INTERACTIONS
 
-add texture/background animations to other pages
-- Gdes: text / image frames that are growing and shrinking
-- Coding: ocean of pixelated cursors, wobbeling moving
-- other stuff: loopy spirals?
+add second side bar for controls on p5.js sketches
 
 make entry thumbnails clickable, and add hover effects to them
 == related issue
@@ -20,6 +17,11 @@ Deal with Face Delay camera issues
 
 
 == DONE STUFF ====================
+
+add texture/background animations to other pages
+- Gdes: text / image frames that are growing and shrinking
+- Coding: ocean of pixelated cursors, wobbeling moving
+- other stuff: loopy spirals?
 
 fix sidebar transition 
 by: locking top position of menu options
