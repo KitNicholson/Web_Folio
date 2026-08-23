@@ -9,7 +9,8 @@ let pencil;
 let paperclip;
 let ducky;
 
-let imageSize = 160;
+let imageSize = 150;
+let imgSizeMobile = 100;
 
 let thrownItems = [];
 let numThrown = 20;
@@ -51,7 +52,12 @@ function setup() {
   
   //resize all images
   for (let i=0; i < possibleItems.length; i++) {
-    possibleItems[i].resize(imageSize, 0);
+
+    if (width > 700) {
+      possibleItems[i].resize(imageSize, 0);
+    } else {
+      possibleItems[i].resize(imgSizeMobile, 0);
+    }
   }
 
   // spawn all thrown items

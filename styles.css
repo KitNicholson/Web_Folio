@@ -407,9 +407,15 @@ a {
       grid-area: 4/1 / span 2 / span 1;
    }
 
+   .mainPara {
+      margin-top: 40px;
+      margin-bottom: 40px;
+   }
+
    h2{
       font-size: 15vw;
       line-height: 10vw;
+      margin-top: 20px;
    }
 
    .h2MidGrid {

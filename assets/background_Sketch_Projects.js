@@ -28,7 +28,7 @@ function setup() {
   var pageHeight = Math.max( body.scrollHeight, body.offsetHeight, 
                         html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-  console.log(pageHeight);
+  // console.log(pageHeight);
   
   canvas = createCanvas(windowWidth-20, windowHeight);
   canvas.position(0,0);
@@ -36,7 +36,7 @@ function setup() {
   frameRate(30);
   angleMode(DEGREES);
 
-  overflow = width*0.6;
+  overflow = width*0.2;
 
   fillColour = color(240);
   edgeColour = color(220);
@@ -45,7 +45,7 @@ function setup() {
   let boxTypes = ['IMAGE', 'BLANK']
 
   // spawn random number of boxes
-  for (let i=0; i<random(7, 12); i++) {
+  for (let i=0; i<random(7, 14); i++) {
     boxes.push(new Box(random(0-overflow, width), random(0-overflow, height), 
                        random(width*0.3, width*0.6), random(height*0.2, height*0.6),
                        random(boxTypes)));

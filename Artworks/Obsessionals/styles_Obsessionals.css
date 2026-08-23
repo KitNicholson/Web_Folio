@@ -5,7 +5,6 @@
 }
 
 #image_2 {    
-
     padding-left: 10vw;
     grid-area: 8/1 / span 5 / span 2;
 }
@@ -33,6 +32,7 @@
     }
 
     #image_2 {    
+        padding-left: 0%;
         grid-area: 16/1 / span 14 / span 1;
     }
 
