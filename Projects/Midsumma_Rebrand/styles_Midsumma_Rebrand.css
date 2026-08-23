@@ -1,83 +1,78 @@
 /* position images */
 
 #image_1 {
-    grid-area: 4/1 / span 5 / span 2;
+    grid-area: 1/1 / span 5 / span 2;
 }
 
 #image_2 {
-    grid-area: 4/3 / span 5 / span 1; 
+    grid-area: 1/3 / span 5 / span 1; 
     direction: rtl;
 }
 
 #image_3 {
-    grid-area: 10/1 / span 4 / span 1; 
+    grid-area: 7/1 / span 4 / span 1; 
     direction: rtl;
 }
 
 #image_4 {
-    grid-area: 9/2 / span 5 / span 2;
+    grid-area: 6/2 / span 5 / span 2;
 }
 
 #image_5 {
-    grid-area: 14/3 / span 3 / span 2;
+    grid-area: 11/3 / span 3 / span 2;
 }
 
 #image_6 {
-    grid-area: 14/1 / span 3 / span 2; 
+    grid-area: 11/1 / span 3 / span 2; 
     direction: rtl;
 }
 
 #image_7 {
-    grid-area: 17/1 / span 5 / span 2;
+    grid-area: 14/1 / span 5 / span 2;
 }
 
 #image_8 {
-    grid-area: 18/3 / span 3 / span 2;
+    grid-area: 15/3 / span 3 / span 2;
 }
 
 @media screen and (max-width: 700px) {
 
-    #MR_description {
-        grid-area: 6/1 / span 2 / span 1;
-        margin-top: -25px;
-    }
-
     #image_1 {
-        grid-area: 17/1 / span 6 / span 1;
+        grid-area: 1/1 / span 6 / span 1;
     }
 
     #image_4 {
-        grid-area: 23/1 / span 7 / span 1;
+        grid-area: 8/1 / span 7 / span 1;
         direction: rtl;
     }
 
     #image_2 {
-        grid-area: 30/1 / span 14 / span 1; 
+        grid-area: 16/1 / span 14 / span 1; 
         display: flex;
         justify-content: center;
     }
 
     #image_3 {
-        grid-area: 45/1 / span 9 / span 1; 
+        grid-area: 31/1 / span 9 / span 1; 
     }
 
     #image_5 {
-        grid-area: 55/1 / span 11 / span 1;
+        grid-area: 41/1 / span 11 / span 1;
     }
 
     #image_6 {
-        grid-area: 66/1 / span 6 / span 1;
+        grid-area: 53/1 / span 6 / span 1;
         direction: rtl;
     }
 
     #image_8 {
-        grid-area: 72/1 / span 7 / span 1;
+        grid-area: 59/1 / span 7 / span 1;
         display: flex;
         justify-content: center;
     }
 
     #image_7 {
-        grid-area: 79/1 / span 6 / span 1;
+        grid-area: 66/1 / span 6 / span 1;
     }
 
 }

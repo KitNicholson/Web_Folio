@@ -20,7 +20,7 @@ h1 {
    text-shadow: 0px 0px 18px rgb(52, 52, 52);
 
    margin-top: -5px;
-   margin-bottom: 0px;
+   margin-bottom: 50px;
 }
 
 h2 {
@@ -35,10 +35,10 @@ h2 {
    margin-bottom: 0px;
 }
 
-h3 {
-   font-family: 'officeCodePro';
-   font-weight: normal;
-   font-size: 20pt;
+.h2MidGrid {
+   margin-bottom: 80px;
+   margin-top: 80px;
+   /* background-color: green; */
 }
 
 .mock_h3 {
@@ -53,7 +53,13 @@ h3 {
 p {
    font-family:'officeCodePro';
    font-size: 14pt;
+   line-height: normal;
    color: white;
+   transition: 0.2s;
+}
+
+u {
+   transition: 0.2s;
 }
 
 .p2 {
@@ -61,36 +67,50 @@ p {
    font-size: 11pt;
 }
 
-/* sidebar text */
 .menu p {
    color: black;
    line-height: 1.13em;
 }
 
-a:hover{
+p a u:hover {
    color:rgb(255, 68, 0);
 }
 
-a p:hover {
+a:hover p {
    color:rgb(255, 68, 0);
-   /* cursor: pointer; */
 }
 
-a u:hover {
-   color:rgb(255, 68, 0);
-   /* cursor: pointer; */
+A:hover img{
+   max-width: auto;
+   scale: 1.05;
+   opacity: 0.8;
 }
 
-.mainPara {
-   margin-top: 1vw;
-   margin-right: 3%;
-   column-width: 30em;
-   column-gap: 60px;
+img {
+   max-width: 100%;
+   max-height: 100%;
+   border-radius: 12px;
 }
 
-.infoTextBL {
-   position: absolute;
-   bottom: -20px;
+.imgFrame {
+   overflow: hidden;
+   height: 19vw;
+   background-color: rgb(255, 68, 0);
+   margin-top: -10px;
+   border-radius: 15px;
+}
+
+.imgLink {
+   width: 100%;
+   height: 100%;
+   transition: 0.4s;
+}
+
+.linkTitle {
+   display: flex; 
+   flex-direction: column-reverse; 
+   height: 110px;
+   /* background-color: aqua; */
 }
 
 /* ============ PAGE LAYOUT ============ */
@@ -99,7 +119,6 @@ body {
    margin: 0vh;
    display: grid;
    grid-template-columns: auto 50px;
-
    padding: 0px;
 }
 
@@ -110,15 +129,24 @@ body {
    margin: 2vw;
 }
 
+.mainPara {
+   margin-top: 80px;
+   margin-bottom: 80px;
+   padding-right: 3%;
+   /* background-color: aqua; */
+   column-width: 25em;
+   column-gap: 60px;
+   /* background-color: rgb(0, 255, 94); */
+}
+
 .grid {
    display: grid;
    grid-template-columns: repeat(3, minmax(0, 1fr));
    grid-auto-rows: 9vw;
 
-   /* margin-left: 1%; */
-   width: 100%; /* width should be equal to: 100 - (2 * margin-left) */
+   /* background-color: aqua; */
 
-   column-gap: 1.6vw;
+   column-gap: 2vw;
    row-gap: 8px;
 }
 
@@ -146,10 +174,11 @@ body {
 
 .project_title {
    /* position: fixed; */
-   width: 85vw;
+   width: 100%;
    top: 2vh;
    margin-left: 0px;
    padding-right: 0px;
+   grid-area: 1/1 / span 1 / span 3;
    /* background-color: aqua; */
 }
 
@@ -266,23 +295,6 @@ body {
    width: 10px;
 }
 
-iframe {
-   width: 100%;
-   height: 100%;
-}
-
-img {
-   max-width:100%;
-   max-height:100%;
-}
-
-.imgFill {
-   width: 100%;
-   height: 100%;
-
-   object-fit: fill;
-}
-
 /* ============ MISC ============ */
 
 canvas {
@@ -316,16 +328,21 @@ a {
 
    body {
       grid-template-columns: auto;
+      grid-template-rows: auto 50px;
    }
    
    .grid {
       display: grid;
       grid-template-columns: 100%;
 
-      margin-bottom: 50px;
-
+      /* padding-bottom: 110vw; */
+      /* margin-bottom: 50px; */
       /* row-gap: 8px; */
       
+   }
+
+   .imgFrame {
+      height: 58vw;
    }
 
    #sideBar {
@@ -387,11 +404,17 @@ a {
    }
 
    .project_description {
-      grid-area: 4/1 / span 2 / span 3;
+      grid-area: 4/1 / span 2 / span 1;
    }
 
    h2{
-      font-size: 87px;
-      line-height: 64px;
+      font-size: 15vw;
+      line-height: 10vw;
+   }
+
+   .h2MidGrid {
+      line-height: 12vw;
+      margin-bottom: 40px;
+      margin-top: 40px;
    }
  }

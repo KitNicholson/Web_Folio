@@ -1,7 +1,7 @@
 // ======================== Global Variabls ======================== //
 
-let noiseSpeed = 0.005;
-let trigSPeed = 0.5;
+let noiseSpeed = 0.004;
+let trigSPeed = 0.6;
 
 let img;
 let cursors = [];
@@ -25,17 +25,24 @@ function setup() {
   angleMode(DEGREES);
   imageMode(CENTER);
 
-  
+  let size = 70;
+  let numCusors = 40;
+
+
   if (width > 500) {
-    img.resize(90,0);
-  } else {
-    img.resize(50,0);
-  }
+    size = 100;
+    numCusors = 30;
+  } 
+
+  img.resize(size,0);
 
 
-  for (let i=0; i< 20; i++) {
+  for (let i=0; i < numCusors; i++) {
     cursors.push(new Cursor());
   }
+
+  updateCursors(cursors);
+
 }
 
 function draw() {

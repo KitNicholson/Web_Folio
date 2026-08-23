@@ -1,0 +1,42 @@
+/* position images */
+
+#image_1 {
+    grid-area: 1/1 / span 5 / span 2;
+}
+
+#image_2 {
+    direction: rtl;
+    
+    grid-area: 2/2 / span 4 / span 2;
+}
+
+#image_3 {
+    direction: rtl;
+    grid-area: 6/2 / span 6 / span 2;
+}
+
+#image_4 {
+    grid-area: 12/1 / span 4 / span 3;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 700px) {
+
+    #image_1 {
+        grid-area: 1/1 / span 12 / span 1;
+    }
+
+    #image_2 {
+        grid-area: 13/1 / span 8 / span 1;
+    }
+
+    #image_3 {
+        grid-area: 22/1 / span 9 / span 1;
+    }
+
+    #image_4 {
+        grid-area: 32/1 / span 5 / span 1;
+    }
+
+}

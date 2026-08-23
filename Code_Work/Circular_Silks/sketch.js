@@ -9,13 +9,23 @@ let armLength = 10; // this is only the initial value, using the left and right 
 let numPoints = 20;
 let nScale = 0.08;
 
+let cornerDist;
+
 function setup() {
-  canvas = createCanvas(windowWidth - 1 , windowHeight);
+  canvas = createCanvas(windowWidth - 1, windowHeight);
   canvas.position(0,0);  frameRate(30);
 
-  makeOTendrils((windowWidth/2) - 15, windowHeight/2, 120, 120);
+  cornerDist = Math.sqrt((width**2) + (height**2));
 
-  armLength = windowWidth*0.017
+  
+
+  if (width > 700) {
+    makeOTendrils((windowWidth/2) - 40, windowHeight/2, 130, 160);
+    armLength = cornerDist*0.02;
+  } else {
+    makeOTendrils((windowWidth/2), windowHeight/2, 100, 90);
+    armLength = cornerDist*0.025;
+  }
 
   background(255);
 
@@ -27,14 +37,17 @@ function draw() {
 
   fill(255, 50);
   noStroke();
-  circle((windowWidth/2) - 15, windowHeight/2, 140);
-  circle((windowWidth/2) - 15, windowHeight/2, 135);
-  circle((windowWidth/2) - 15, windowHeight/2, 130);
-  circle((windowWidth/2) - 15, windowHeight/2, 125);
-  // circle((windowWidth/2) - 15, windowHeight/2, 120);
-  // circle((windowWidth/2) - 15, windowHeight/2, 115);
-  // circle((windowWidth/2) - 15, windowHeight/2, 110);
-  // circle((windowWidth/2) - 15, windowHeight/2, 105);
+  if (width > 700) {
+    circle((windowWidth/2) - 40, windowHeight/2, 160);
+    circle((windowWidth/2) - 40, windowHeight/2, 155);
+    circle((windowWidth/2) - 40, windowHeight/2, 150);
+    circle((windowWidth/2) - 40, windowHeight/2, 145);
+  } else {
+    circle((windowWidth/2), windowHeight/2, 120);
+    circle((windowWidth/2), windowHeight/2, 115);
+    circle((windowWidth/2), windowHeight/2, 110);
+    circle((windowWidth/2), windowHeight/2, 105);
+  }
 
   redrawTendrils(tendrils);
   

@@ -1,211 +1,69 @@
 /* posittion cells */
 
 #cell_1 {
-    grid-area: 2/1 / span 1 / span 1;
-}
-#cell_1_thumbnail {
-    grid-area: 3/1 / span 2 / span 1;
+    grid-area: 1/1;
 }
 
 #cell_2 {
-    grid-area: 2/2 / span 1 / span 1;
-}
-#cell_2_thumbnail {
-    grid-area: 3/2 / span 2 / span 1;
+    grid-area: 1/2;
 }
 
 #cell_3 {
-    grid-area: 2/3 / span 1 / span 1;
-}
-#cell_3_thumbnail {
-    grid-area: 3/3 / span 2 / span 1;
+    grid-area: 1/3;
 }
 
 #cell_4 {
-    grid-area: 5/1 / span 1 / span 1;
-}
-#cell_4_thumbnail {
-    grid-area: 6/1 / span 2 / span 1;
+    grid-area: 4/1;
 }
 
 #cell_5 {
-    grid-area: 5/2 / span 1 / span 1;
-}
-#cell_5_thumbnail {
-    grid-area: 6/2 / span 2 / span 1;
+    grid-area: 4/2;
 }
 
 #cell_6 {
-    grid-area: 5/3 / span 1 / span 1;
-}
-#cell_6_thumbnail {
-    grid-area: 6/3 / span 2 / span 1;
+    grid-area: 4/3;
 }
 
 #cell_7 {
-    grid-area: 8/1 / span 1 / span 1;
-}
-#cell_7_thumbnail {
-    grid-area: 9/1 / span 2 / span 1;
+    grid-area: 7/1;
 }
 
 #cell_8 {
-    grid-area: 8/2 / span 1 / span 1;
-}
-#cell_8_thumbnail {
-    grid-area: 9/2 / span 2 / span 1;
+    grid-area: 7/2;
 }
 
 #cell_9 {
-    grid-area: 8/3 / span 1 / span 1;
-}
-#cell_9_thumbnail {
-    grid-area: 9/3 / span 2 / span 1;
+    grid-area: 7/3;
 }
 
 #cell_10 {
-    grid-area: 11/1 / span 1 / span 1;
-}
-#cell_10_thumbnail {
-    grid-area: 12/1 / span 2 / span 1;
+    grid-area: 10/1;
 }
 
 #cell_11 {
-    grid-area: 11/2 / span 1 / span 1;
-}
-#cell_11_thumbnail {
-    grid-area: 12/2 / span 2 / span 1;
+    grid-area: 10/2;
 }
 
 #cell_12 {
-    grid-area: 11/3 / span 1 / span 1;
-}
-#cell_12_thumbnail {
-    grid-area: 12/3 / span 2 / span 1;
+    grid-area: 10/3;
 }
 
-#cell_13 {
-    grid-area: 14/1 / span 1 / span 1;
-}
-#cell_13_thumbnail {
-    grid-area: 15/1 / span 2 / span 1;
-}
-
-#cell_14 {
-    grid-area: 14/2 / span 1 / span 1;
-}
-#cell_14_thumbnail {
-    grid-area: 15/2 / span 2 / span 1;
-}
-
-#end_Space {
-    grid-area: 17/1 / span 1 / span 3;
+#endSpace {
+    grid-area: 12/3;
 }
 
 /* tablet */
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width:1200px) {
 
-    #cell_1 {
-        grid-area: 4/1 / span 1 / span 1;
-    }
-    #cell_1_thumbnail {
-        grid-area: 5/1 / span 2 / span 1;
+    h1 {
+        font-size: 11vw;
     }
 
-    #cell_2 {
-        grid-area: 4/2 / span 1 / span 1;
-    }
-    #cell_2_thumbnail {
-        grid-area: 5/2 / span 2 / span 1;
+    #endSpace {
+        grid-area: 13/3;
     }
 
-    #cell_3 {
-        grid-area: 4/3 / span 1 / span 1;
-    }
-    #cell_3_thumbnail {
-        grid-area: 5/3 / span 2 / span 1;
-    }
-
-    #cell_4 {
-        grid-area: 7/1 / span 1 / span 1;
-    }
-    #cell_4_thumbnail {
-        grid-area: 8/1 / span 2 / span 1;
-    }
-
-    #cell_5 {
-        grid-area: 7/2 / span 1 / span 1;
-    }
-    #cell_5_thumbnail {
-        grid-area: 8/2 / span 2 / span 1;
-    }
-
-    #cell_6 {
-        grid-area: 7/3 / span 1 / span 1;
-    }
-    #cell_6_thumbnail {
-        grid-area: 8/3 / span 2 / span 1;
-    }
-
-    #cell_7 {
-        grid-area: 10/1 / span 1 / span 1;
-    }
-    #cell_7_thumbnail {
-        grid-area: 11/1 / span 2 / span 1;
-    }
-
-    #cell_8 {
-        grid-area: 10/2 / span 1 / span 1;
-    }
-    #cell_8_thumbnail {
-        grid-area: 11/2 / span 2 / span 1;
-    }
-
-    #cell_9 {
-        grid-area: 10/3 / span 1 / span 1;
-    }
-    #cell_9_thumbnail {
-        grid-area: 11/3 / span 2 / span 1;
-    }
-
-    #cell_10 {
-        grid-area: 13/1 / span 1 / span 1;
-    }
-    #cell_10_thumbnail {
-        grid-area: 14/1 / span 2 / span 1;
-    }
-
-    #cell_11 {
-        grid-area: 13/2 / span 1 / span 1;
-    }
-    #cell_11_thumbnail {
-        grid-area: 14/2 / span 2 / span 1;
-    }
-
-    #cell_12 {
-        grid-area: 13/3 / span 1 / span 1;
-    }
-
-    #cell_12_thumbnail {
-        grid-area: 14/3 / span 2 / span 1;
-    }
-
-    #cell_13 {
-        grid-area: 16/1 / span 1 / span 1;
-    }
-
-    #cell_13_thumbnail {
-        grid-area: 17/1 / span 2 / span 1;
-    }
-
-    #cell_14 {
-        grid-area: 16/2 / span 1 / span 1;
-    }
-
-    #cell_14_thumbnail {
-        grid-area: 17/2 / span 2 / span 1;
-    }
 }
 
 /* mobile */
@@ -218,109 +76,55 @@
     }
 
     #cell_1 {
-        grid-area: 6/1 / span 1 / span 1;
-    }
-    #cell_1_thumbnail {
-        grid-area: 7/1 / span 5 / span 1;
+        grid-area: 1/1;
     }
 
     #cell_2 {
-        grid-area: 13/1 / span 1 / span 1;
-    }
-    #cell_2_thumbnail {
-        grid-area: 14/1 / span 5 / span 1;
+        grid-area: 9/1;
     }
 
     #cell_3 {
-        grid-area: 20/1 / span 1 / span 1;
-    }
-    #cell_3_thumbnail {
-        grid-area: 21/1 / span 5 / span 1;
+        grid-area: 17/1;
     }
 
     #cell_4 {
-        grid-area: 27/1 / span 1 / span 1;
-    }
-    #cell_4_thumbnail {
-        grid-area: 28/1 / span 5 / span 1;
+        grid-area: 25/1;
     }
 
     #cell_5 {
-        grid-area: 34/1 / span 1 / span 1;
-    }
-    #cell_5_thumbnail {
-        grid-area: 35/1 / span 5 / span 1;
+        grid-area: 33/1;
     }
 
     #cell_6 {
-        grid-area: 41/1 / span 1 / span 1;
-    }
-    #cell_6_thumbnail {
-        grid-area: 42/1 / span 5 / span 1;
+        grid-area: 41/1;
     }
 
     #cell_7 {
-        grid-area: 48/1 / span 1 / span 1;
-    }
-    #cell_7_thumbnail {
-        grid-area: 49/1 / span 5 / span 1;
+        grid-area: 49/1;
     }
 
     #cell_8 {
-        grid-area: 55/1 / span 1 / span 1;
-    }
-    #cell_8_thumbnail {
-        grid-area: 56/1 / span 5 / span 1;
+        grid-area: 57/1;
     }
 
     #cell_9 {
-        grid-area: 62/1 / span 1 / span 1;
-    }
-    #cell_9_thumbnail {
-        grid-area: 63/1 / span 5 / span 1;
+        grid-area: 65/1;
     }
 
     #cell_10 {
-        grid-area: 69/1 / span 1 / span 1;
-    }
-    #cell_10_thumbnail {
-        grid-area: 70/1 / span 5 / span 1;
+        grid-area: 73/1;
     }
 
     #cell_11 {
-        grid-area: 76/1 / span 1 / span 1;
-    }
-    #cell_11_thumbnail {
-        grid-area: 77/1 / span 5 / span 1;
+        grid-area: 81/1;
     }
 
     #cell_12 {
-        grid-area: 83/1 / span 1 / span 1;
-    }
-    #cell_12_thumbnail {
-        grid-area: 84/1 / span 5 / span 1;
+        grid-area: 89/1;
     }
 
-    #cell_13 {
-        grid-area: 90/1 / span 1 / span 1;
-    }
-    #cell_13_thumbnail {
-        grid-area: 91/1 / span 5 / span 1;
-    }
-
-    #cell_14 {
-        grid-area: 97/1 / span 1 / span 1;
-    }
-    #cell_14_thumbnail {
-        grid-area: 98/1 / span 5 / span 1;
-    }
-
-    #end_Space {
-        grid-area: 102/1;
-        /* background-color: blueviolet; */
-        height: 28vw;
-
-        opacity: 0.2;
+    #endSpace {
+        grid-area: 98/3;
     }
 
 }

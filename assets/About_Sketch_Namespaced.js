@@ -21,23 +21,23 @@ var sketch = function(p) {
   p.preload = function() {
 
     p.rand = p.round(p.random(1,5)); // one less than number of possible options
-    p.headPath = 'About/Heads/Head_' + p.rand + '.png';
+    p.headPath = 'assets/AboutSketch_images/Heads/Head_1.png';
     p.head = p.loadImage(p.headPath);
 
     p.rand = p.round(p.random(1,5)); // one less than number of possible options
-    p.mouthPath = 'About/Mouths/Mouth_' + p.rand + '.png';
+    p.mouthPath = 'assets/AboutSketch_images/Mouths/Mouth_' + p.rand + '.png';
     p.mouth = p.loadImage(p.mouthPath);
 
     p.rand = p.round(p.random(1,5)); // one less than number of possible options
-    p.nosePath = 'About/Noses/Nose_' + p.rand + '.png';
+    p.nosePath = 'assets/AboutSketch_images/Noses/Nose_' + p.rand + '.png';
     p.nose = p.loadImage(p.nosePath);
 
     p.rand = p.round(p.random(1,5)); // one less than number of possible options
-    p.eyeLeftPath = 'About/Left_eyes/Left_eye_' + p.rand + '.png';
+    p.eyeLeftPath = 'assets/AboutSketch_images/Left_eyes/Left_eye_' + p.rand + '.png';
     p.eyeLeft = p.loadImage(p.eyeLeftPath);
 
     p.rand = p.round(p.random(1,5)); // one less than number of possible options
-    p.eyeRightPath = 'About/Right_eyes/Right_eye_' + p.rand + '.png';
+    p.eyeRightPath = 'assets/AboutSketch_images/Right_eyes/Right_eye_' + p.rand + '.png';
     p.eyeRight = p.loadImage(p.eyeRightPath);
 
   }
@@ -57,6 +57,8 @@ var sketch = function(p) {
   }
 
   p.draw = function() {
+
+    p.image(p.head, 0,0);
 
     // make the background transparent
     p.erase();
@@ -85,7 +87,7 @@ var sketch = function(p) {
       // every so often change one of the features
       if (random(0, 4) < 1) {
         p.changeFeature();
-        // console.log('here');
+        console.log('here');
       }
 
     }
@@ -137,7 +139,7 @@ var sketch = function(p) {
 
       // change head
       p.rand = p.round(p.random(1,5)); // one less than number of possible options
-      p.headPath = 'About/Heads/Head_' + p.rand + '.png';
+      p.headPath = 'assets/AboutSketch_images/Heads/Head_' + p.rand + '.png';
       p.head = p.loadImage(p.headPath);
       // console.log('changed head');
 
@@ -145,7 +147,7 @@ var sketch = function(p) {
 
       // change mouth
       p.rand = p.round(p.random(1,5)); // one less than number of possible options
-      p.mouthPath = 'About/Mouths/Mouth_' + p.rand + '.png';
+      p.mouthPath = 'assets/AboutSketch_images/Mouths/Mouth_' + p.rand + '.png';
       p.mouth = p.loadImage(p.mouthPath);
       // console.log('changed mouth');
 
@@ -153,7 +155,7 @@ var sketch = function(p) {
 
       // change nose
       p.rand = p.round(p.random(1,5)); // one less than number of possible options
-      p.nosePath = 'About/Noses/Nose_' + p.rand + '.png';
+      p.nosePath = 'assets/AboutSketch_images/Noses/Nose_' + p.rand + '.png';
       p.nose = p.loadImage(p.nosePath);
       // console.log('changed nose');
 
@@ -161,7 +163,7 @@ var sketch = function(p) {
 
       // change left eye
       p.rand = p.round(p.random(1,5)); // one less than number of possible options
-      p.eyeLeftPath = 'About/Left_eyes/Left_eye_' + p.rand + '.png';
+      p.eyeLeftPath = 'assets/AboutSketch_images/Left_eyes/Left_eye_' + p.rand + '.png';
       p.eyeLeft = p.loadImage(p.eyeLeftPath);
 
       // console.log('changed left eye');
@@ -170,7 +172,7 @@ var sketch = function(p) {
 
       // change right eye
       p.rand = p.round(p.random(1,5)); // one less than number of possible options
-      p.eyeRightPath = 'About/Right_eyes/Right_eye_' + p.rand + '.png';
+      p.eyeRightPath = 'assets/AboutSketch_images/Right_eyes/Right_eye_' + p.rand + '.png';
       p.eyeRight = p.loadImage(p.eyeRightPath);
 
       // console.log('changed right eye');

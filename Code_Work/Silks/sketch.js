@@ -7,24 +7,36 @@ let variation = 450;
 let speed = 200;
 
 let armLength = 10; // this is only the initial value, using the left and right arrows will change it
+let armColour;
+let backColour;
+
+let cornerDist;
 
 function setup() {
   canvas = createCanvas(windowWidth -1 , windowHeight);
   canvas.position(0,0);
   frameRate(60);
 
+  cornerDist = Math.sqrt((width**2) + (height**2));
+  // console.log(cornerDist);
+
   //makeOTendrils(windowWidth/2, windowHeight/2, 400, 200);
   makeLTendrils();
 
-  background(0);
+  armLength = cornerDist*0.014
 
-  armLength = windowWidth*0.014
+  armColour = color(0, 60, 175, 22);
+  backColour = color(230, 230, 50, 8);
+  // backColour = color(220, 10);
+
+  background(0,60,175);
+  
 
 }
 
 function draw() {
 
-  background(220,10);
+  background(backColour);
 
   redrawTendrils(tendrils);
   
@@ -35,7 +47,7 @@ function draw() {
 function redrawTendrils(tendrilArray) {
   for (let i=0; i<tendrilArray.length; i++) {
     tendrilArray[i].updateTendril(i);
-    tendrilArray[i].drawTendril(0, 0);
+    tendrilArray[i].drawTendril(armColour);
   }
 }
 
@@ -100,7 +112,7 @@ class Tendril {
     // draws the tendril
 
     noFill();
-    stroke(strokeCol, 12);
+    stroke(strokeCol);
     strokeWeight(3)
     beginShape();
 
@@ -177,31 +189,26 @@ function spawnTendril(Xpos, Ypos, armLength, numPoints) {
 
 function makeLTendrils() {
 
-  let xOffset = windowWidth*0.25;
-  let yOffset = windowHeight*0.32;
-
-  let length = windowWidth*0.15;
-
-  let gap = windowWidth*0.14;
+  let length = cornerDist*0.13;
 
   // left side of square
   for (let i=0; i <= length; i+=spacing) {
-    tendrils.push(new spawnTendril(xOffset, yOffset+i, armLength, numTendrilSegments));
+    tendrils.push(new spawnTendril(width*0.25, (height*0.3)+i, armLength, numTendrilSegments));
   }
 
   // top side of square
   for (let i=0; i<length; i+=spacing) {
-    tendrils.push(new spawnTendril(xOffset+i, yOffset,armLength, numTendrilSegments));
+    tendrils.push(new spawnTendril((width*0.25)+i, height*0.3, armLength, numTendrilSegments));
   }
 
   // right side of squareleft
   for (let i=spacing; i <= length; i+=spacing) {
-    tendrils.push(new spawnTendril(xOffset+ length + gap, yOffset+i+gap*.35,armLength, numTendrilSegments));
+    tendrils.push(new spawnTendril(width*0.68 - length, height*0.7 - i, armLength, numTendrilSegments));
   }
 
   // bottom side of square
   for (let i=spacing; i<length; i+=spacing) {
-    tendrils.push(new spawnTendril(xOffset+length + i + gap, yOffset+length +gap*.35,armLength, numTendrilSegments));
+    tendrils.push(new spawnTendril(width*0.68 - i, height*0.7, armLength, numTendrilSegments));
   }
 }
 
