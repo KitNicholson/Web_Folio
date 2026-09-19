@@ -2,95 +2,76 @@ var sketch = function(p) {
 
   p.canvas
 
-  p.centre;
+  p.centreX;
+  p.centreY;
 
   p.imgScale;
-
-  p.head;
-  p.mouth;
-  p.nose;
-  p.eyeLeft;
-  p.eyeRight;
 
   p.randomness = 555; // how far the features can move
 
   p.frameChange = 2;
 
+  p.firstFrame = true;
+
   // ======================== Main Functions ======================== //
 
   p.preload = function() {
 
-    p.rand = p.round(p.random(1,5)); // one less than number of possible options
-    p.headPath = 'assets/AboutSketch_images/Heads/Head_1.png';
-    p.head = p.loadImage(p.headPath);
+    p.headshot = loadImage('assets/AboutSketch_images/Headshot.png');
 
-    p.rand = p.round(p.random(1,5)); // one less than number of possible options
-    p.mouthPath = 'assets/AboutSketch_images/Mouths/Mouth_' + p.rand + '.png';
-    p.mouth = p.loadImage(p.mouthPath);
+    p.rand = p.round(p.random(1,10)); // one less than number of possible options
+    p.eye1Path = 'assets/AboutSketch_images/eye_' + p.rand + '.png';
+    p.eye1 = p.loadImage(p.eye1Path);
 
-    p.rand = p.round(p.random(1,5)); // one less than number of possible options
-    p.nosePath = 'assets/AboutSketch_images/Noses/Nose_' + p.rand + '.png';
-    p.nose = p.loadImage(p.nosePath);
+    p.rand = p.round(p.random(1,10)); // one less than number of possible options
+    p.eye2Path = 'assets/AboutSketch_images/eye_' + p.rand + '.png';
+    p.eye2 = p.loadImage(p.eye2Path);
 
-    p.rand = p.round(p.random(1,5)); // one less than number of possible options
-    p.eyeLeftPath = 'assets/AboutSketch_images/Left_eyes/Left_eye_' + p.rand + '.png';
-    p.eyeLeft = p.loadImage(p.eyeLeftPath);
-
-    p.rand = p.round(p.random(1,5)); // one less than number of possible options
-    p.eyeRightPath = 'assets/AboutSketch_images/Right_eyes/Right_eye_' + p.rand + '.png';
-    p.eyeRight = p.loadImage(p.eyeRightPath);
+    p.rand = p.round(p.random(1,10)); // one less than number of possible options
+    p.eye3Path = 'assets/AboutSketch_images/eye_' + p.rand + '.png';
+    p.eye3 = p.loadImage(p.eye3Path);
 
   }
 
   p.setup = function() {
-    p.canvas = p.createCanvas(p.windowWidth-1, p.windowHeight);
+
+    p.canvas = p.createCanvas(p.windowWidth, p.windowHeight);
     p.canvas.position(0,0);
-    p.frameRate(1.2);
+    p.imageMode(CENTER);
+    p.frameRate(1.4);
     // p.frameRate(30);
     p.count = 0;
 
     p.getCenterPos();
-    // console.log(p.height);
 
-    p.setImgScale();
+    p.euclidDist = Math.sqrt(p.width*p.width + p.height*p.height);
+
+    // p.imgScale = p.height * 0.0006;   
+    p.imgScale = p.euclidDist * 0.00025;   
 
   }
 
   p.draw = function() {
 
-    p.image(p.head, 0,0);
+    if (p.width < 700) { // 700 is when mobile styles activate
+      return
+    }
 
     // make the background transparent
     p.erase();
     p.rect(-10, -10, p.width+20, p.height+20);
     p.noErase();
 
-    // fill(255,0,0);
-    // noStroke();
-    // circle(centre-5, height/2, 10);
+    // draw head shot
+    p.drawFeature(p.headshot, 0, 0, 0, 1.4, 0.3);
 
-    // draw the face
+    // add extra eyes
+    p.drawFeature(p.eye1, 450, 200, 1, 1.01, 1);
+    p.drawFeature(p.eye2, -550, -200, 2, 1.01, 1);
+    // p.drawFeature(p.eye3, 200, -500, 3, 1.01, 1);
 
-    p.drawFeature(p.head, 100, -40, 0, 2.6);
-
-    p.drawFeature(p.nose, 30, 280, 2, 1);
-
-    p.drawFeature(p.mouth, 30, 580, 1, 1);
-
-    p.drawFeature(p.eyeLeft, -200, 0, 3, 1);
-
-    p.drawFeature(p.eyeRight, 200, 0, 4, 1);
-
-    // console.log(p.frameCount)
-    if (p.frameCount % 2 === 0) {
-
-      // every so often change one of the features
-      if (random(0, 4) < 1) {
-        p.changeFeature();
-        console.log('here');
-      }
-
-    }
+    // randomly change some features
+    p.changeFeature();
 
   }
 
@@ -103,14 +84,16 @@ var sketch = function(p) {
   }
 
   p.getCenterPos = function() {
-    p.centre = p.width*3/5;
+
+    p.centreX = p.width*0.7;
+    p.centreY = p.height/2;
+
+    if (width < 700) {
+      p.centreX = p.width/2;
+    }
   }
 
-  p.setImgScale = function() {
-    p.imgScale = p.height * 0.0006;
-  }
-
-  p.drawFeature = function(feature, distX, distY, num, scale) {
+  p.drawFeature = function(feature, distX, distY, num, scale, animateScale) {
     // draws the given facial feature (img) to the canvas, 
     // relative to center point (2/3*width 1/2*height)
 
@@ -118,15 +101,20 @@ var sketch = function(p) {
     if (p.frameCount % 2 === 1) {
       p.count = p.frameCount - 1;
     }
+
+    // p.randOffsetX = 0;
+    // p.randOffsetY = 0;
   
     p.randOffsetX = p.noise(0, p.count/p.frameChange, num) * p.randomness;
+    p.randOffsetX = (p.randOffsetX-(p.randomness/2)) * animateScale;
     p.randOffsetY = p.noise(p.count/p.frameChange, 0 , num) * p.randomness;
+    p.randOffsetY = (p.randOffsetY-(p.randomness/2))   * animateScale;
   
-    p.featureWidth = feature.width * p.imgScale * scale;
-    p.featureHeight = feature.height * p.imgScale * scale;
-    p.featureX = p.centre - p.featureWidth/2 + (distX+p.randOffsetX) * p.imgScale;
-    p.featureY = p.height/3 - p.featureHeight/2 + (distY+p.randOffsetY) * p.imgScale;
-    p.image(feature, p.featureX, p.featureY, p.featureWidth, p.featureHeight);
+    // p.featureX = p.centreX - p.featureWidth/2 + (distX+p.randOffsetX) * p.imgScale;
+    p.featureX = p.centreX + (distX + p.randOffsetX) * p.imgScale;
+    // p.featureY = p.height*0.45 - p.featureHeight/2 + (distY+p.randOffsetY) * p.imgScale;
+    p.featureY = p.centreY + (distY + p.randOffsetY) * p.imgScale;
+    p.image(feature, p.featureX, p.featureY, feature.width * p.imgScale * scale, feature.height * p.imgScale * scale);
   }
 
   p.changeFeature = function() {
@@ -135,48 +123,28 @@ var sketch = function(p) {
     p.rand = p.random(0,5); // one less than number of possible options
     // console.log(p.rand);
 
-    if (p.rand < 1) {
+    if (p.random(10) < 1) {
 
-      // change head
-      p.rand = p.round(p.random(1,5)); // one less than number of possible options
-      p.headPath = 'assets/AboutSketch_images/Heads/Head_' + p.rand + '.png';
-      p.head = p.loadImage(p.headPath);
-      // console.log('changed head');
+      // change eye 1
+      p.rand = p.round(p.random(1,10)); // one less than number of possible options
+      p.eye1Path = 'assets/AboutSketch_images/eye_' + p.rand + '.png';
+      p.eye1 = p.loadImage(p.eye1Path);
+    } 
+    
+    if (p.random(10) < 1) {
 
-    } else if (p.rand < 2) {
+      // change eye 2
+      p.rand = p.round(p.random(1,10)); // one less than number of possible options
+      p.eye2Path = 'assets/AboutSketch_images/eye_' + p.rand + '.png';
+      p.eye2 = p.loadImage(p.eye2Path);      
+    }
 
-      // change mouth
-      p.rand = p.round(p.random(1,5)); // one less than number of possible options
-      p.mouthPath = 'assets/AboutSketch_images/Mouths/Mouth_' + p.rand + '.png';
-      p.mouth = p.loadImage(p.mouthPath);
-      // console.log('changed mouth');
+    if (p.random(10) < 1) {
 
-    } else if (p.rand < 3) {
-
-      // change nose
-      p.rand = p.round(p.random(1,5)); // one less than number of possible options
-      p.nosePath = 'assets/AboutSketch_images/Noses/Nose_' + p.rand + '.png';
-      p.nose = p.loadImage(p.nosePath);
-      // console.log('changed nose');
-
-    } else if (p.rand < 4) {
-
-      // change left eye
-      p.rand = p.round(p.random(1,5)); // one less than number of possible options
-      p.eyeLeftPath = 'assets/AboutSketch_images/Left_eyes/Left_eye_' + p.rand + '.png';
-      p.eyeLeft = p.loadImage(p.eyeLeftPath);
-
-      // console.log('changed left eye');
-
-    } else {
-
-      // change right eye
-      p.rand = p.round(p.random(1,5)); // one less than number of possible options
-      p.eyeRightPath = 'assets/AboutSketch_images/Right_eyes/Right_eye_' + p.rand + '.png';
-      p.eyeRight = p.loadImage(p.eyeRightPath);
-
-      // console.log('changed right eye');
-      
+      // change eye 2
+      p.rand = p.round(p.random(1,10)); // one less than number of possible options
+      p.eye3Path = 'assets/AboutSketch_images/eye_' + p.rand + '.png';
+      p.eye3 = p.loadImage(p.eye3Path);      
     }
     
   }
