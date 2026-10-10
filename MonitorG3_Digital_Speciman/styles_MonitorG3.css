@@ -5,23 +5,52 @@ html {
 
 body{
     margin: 0;
+    background-color: rgb(210, 210, 210);
 }
 
-@font-face{
-    font-family: 'monitorG3';
+@font-face {
+    font-family: 'm';
     src: url(Monitor-G3.otf);
 }
 
-
+/* @font-face{
+    font-family: 'monitorG3';
+    src: url(Monitor-G3.otf);
+} */
 
 p {
-    font-family: 'monitorG3';
+    /* font-family: 'monitorG3'; */
+    font-family: 'm';
     font-size: 1rem;
     margin: 1em;
 
     /* text-shadow: -1px -1px 0 rgba(210,210,210, 0.5), 1px -1px 0 rgba(210,210,210, 0.5), 1px 1px 0 rgba(210,210,210, 0.5); */
     /* -webkit-text-stroke: 1px rgba(210,210,210,0.2); */
 
+}
+
+a {
+    color: #000000;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+}
+
+#test_id {
+    color: #9eff36;
+}
+
+a:hover {
+    color:#36e4ff;
+}
+
+h {
+    color: #36e4ff;
+}
+
+.imgWrapper {
+    /* position: absolute;  */
+    position: relative;
+    z-index: -1;
 }
 
 img {
@@ -31,7 +60,7 @@ img {
 }
 
 .backText {
-    font-family: 'monitorG3';
+    font-family: 'm';
     font-size: 30rem;
 
     position: fixed;
@@ -63,13 +92,11 @@ img {
 
     margin-top: 1em;
     margin-bottom: 1.2em;
-    margin-left: 1em;
+    margin-left: 0.9em;
 
     height: 0.5em;
 }
 
-
-
-body {
-    background-color: rgb(210, 210, 210);
+.spacer {
+    height: 2.5em;
 }

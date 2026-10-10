@@ -4,11 +4,16 @@
 
 <!-- TO DO LIST
 1. add contact details / font /liscence 
-2. display accents
-3. animate title
 4. ascii popups
 5. make G3 base text responsive
-6. format website for mobile -->
+6. format website for mobile 
+7. add more animation to title
+-->
+
+<!-- DONE LIST
+2. display accents
+3. animate title 
+-->
 
 
 
@@ -27,6 +32,60 @@
 
     <!-- page address
     http://127.0.0.1:5500/MonitorG3_Digital_Speciman/MonitorG3.html -->
+
+    <script> 
+
+        let flashON = true
+
+        let flash1 = setInterval(function() {
+
+            console.log(flashON);
+            if (flashON) {
+                console.log("on");
+                document.getElementById("title").innerHTML = "&nbsp;"
+                flashON = false;
+            } else {
+                console.log("OFF")
+                document.getElementById("title").innerHTML = '_';
+                flashON = true;
+            }
+        }, 400);
+
+        setTimeout(function () {
+            console.log('STOP');
+            clearInterval(flash1);
+        }, 3600);
+
+        setTimeout(function () {
+            // Source - https://stackoverflow.com/a/64370144
+            // Posted by Waqas Raja, modified by community. See post 'Timeline' for change history
+            // Retrieved 2026-10-10, License - CC BY-SA 4.0
+
+            let Str = "MONITOR-G3";
+            let flashOn = true
+            for (i = 1; i < Str.length+1; i++) {
+                let string = Str.substring(0, i)
+                string = string + "_";
+                setTimeout('document.getElementById("title").innerHTML = \'' + string + '\';', 200 * i);
+            }
+        }, 3600);
+
+        setTimeout( function () {
+            setInterval( 
+                function () {
+                    if (flashON) {
+                        console.log("on");
+                        document.getElementById("title").innerHTML = "MONITOR-G3&nbsp;"
+                        flashON = false;
+                    } else {
+                        console.log("OFF")
+                        document.getElementById("title").innerHTML = 'MONITOR-G3_';
+                        flashON = true;
+                    }
+                }
+            , 400)
+        }, 5600);
+    </script>
     
 </head>
 
@@ -35,7 +94,7 @@
     <!-- position:fixed stuff -->
 
     <!-- header -->
-    <div class="bar" style="position: fixed; z-index: 0; top: 0.8em; margin-left: 5vw; width: 88vw;  height: 0.4em; display: flex; justify-content: space-between; margin-top: 0%;">
+    <div class="bar" style="z-index: 0; top: 0.8em; margin-left: 5vw; width: 88vw;  height: 0.4em; display: flex; justify-content: space-between; margin-top: 0%;">
         <p style="font-size: 0.35em; position: relative; top: -0.1em; margin-top: 0%;">  
             FONT NAME : MONITOR-G3
         </p>
@@ -46,8 +105,8 @@
 
     <!-- Title -->
 
-    <div style="position: relative; z-index: -2; background-color: #9eff36; border-radius: 0.3em; margin: 3em; margin-top: 5em; margin-bottom: 4em; display: flex; justify-content: center;">
-        <p style="font-size: 3rem; color: rgb(210,210,210); margin: 0; margin-bottom: 0.18em;">MONITOR-G3</p>
+    <div style="position: relative; z-index: -2; background-color: #9eff36; border-radius: 0.3em; margin: 3em; margin-top: 5em; margin-bottom: 3.9em">
+        <p id="title" style="font-size: 3rem; color: rgb(210,210,210); margin-top: 0em; margin-bottom: 0.18em; display: flex; justify-content: space-around;"> _ </p>
     </div>
 
     <!-- <p style="font-size: 3rem; background-color: #9eff36; color: rgb(210, 210, 210); border-radius: 0.1em; margin-top: 1.34em; margin-bottom: 1em;"> 
@@ -56,67 +115,115 @@
 
     <!-- Content -->
 
-    <div class="bar" style="width: 30vw;"></div>
+    <div id="m" class="bar" style="width: 30vw;"></div>
 
     <p style="text-shadow: -1px 1px 0 rgba(210,210,210, 1);">
-        Monitor-G3 comes from a combination of influences from around the turn of the century. A mix of early Apple computers (specifically the iMac G3) and an aesthetic known as Gen X Soft Club. It's looking back to a time when computers were still new, and big, and round, and exciting. 
+        Monitor-G3 comes from a combination of influences from around the turn of the century. A 
+        mix of early Apple computer design (specifically the iMac G3) and an aesthetic known as Gen X 
+        Soft Club. It's looking back to a time when computers were still new, and big, and round, 
+        and exciting. 
     </p>
 
-    <div style="position: absolute; z-index: -1; left: 12vw; top: 16.5em; width: 7em; height: 6em; ">
+    <!-- <div class="imgWrapper" style="left: 12vw; top: 16.5em; width: 7em; height: 6em; ">
         <img src="Apple_Yosemite.jpg">
     </div>
 
-    <div style="position: absolute; z-index: -1; left: 60vw; top: 19.44em; width: 9em; height: 7em; ">
+    <div class="imgWrapper" style="left: 60vw; top: 19.44em; width: 9em; height: 7em; ">
         <img src="IMac_and_Mac_SE_(14951809981).jpg">
-    </div>
+    </div> -->
 
     <!-- spacer -->
-    <div style="height: 3em;"></div>
+    <div class="spacer"></div>
+
+    <!-- glyphs  -->
 
     <div class="bar" style="width: 30vw;"></div>
 
-    <p> Glyphs </p>
-
     <p>
+        Glyphs
+        <br><br>
         Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
     </p>
 
     <div style="display: flex;">
 
-    <p>
-        Numbers
-        <br><br>
-        0 1 2 3 4 5 6 7 8 9
-    </p>
+        <p>
+            Numbers
+            <br><br>
+            0 1 2 3 4 5 6 7 8 9
+        </p>
 
-    <p>Symbols
-        <br><br>
-        ? ! @ # $ % & .,:;‘'“”*^`_-+×÷=<>({[]})/|\
-    </p>
+        <p>
+            Symbols
+            <br><br>
+            ¡ ¿ ? ! @ # $ % & .,:;‘'“”*^`_-+×÷=<>({[]})/|\
+        </p>
 
     </div>
 
-    <div style="margin: 1em; border-style: solid; border-color: #9eff36; border-radius: 0.3em; padding: 0%;">
+    <p>Accented Characters</p>
+
+    <div style="display: flex;">
+        <p>
+            Á À Ȧ Â Ä Ǎ Ā Ã Å <br> 
+            É È Ė Ê Ë Ě Ē Ẽ Ȩ <br> 
+            Í Ì İ Î Ï Ǐ Ī Ĩ <br>
+            Ó Ò Ȯ Ô Ö Ǒ Ō Õ Ő Ø <br>
+            Ú Ù Ű Û Ü Ǔ Ū Ũ Ů <br> 
+        </p>
+
+        <p>
+            á à ȧ â ä ǎ ā ã å<br>
+            é è ė ê ë ě ē ẽ ȩ<br>
+            í ì î ï ǐ ī ĩ<br>
+            <br>
+            ú ù û ü ǔ ū ũ ů ű<br>
+        </p>
+
+    </div>
+
+    <div style="margin: 1em; border-style: solid; border-color: rgb(147, 151, 134); border-radius: 0.3em; padding: 0%; background-image: 
+                linear-gradient(rgb(170,170,170), rgba(218, 218, 218, 0), rgb(190, 190, 190));">
         <p contenteditable="true" style="margin: 0.5em;"> test your words here</p>
     </div>
 
-    <!-- spacer -->
-    <div style="height: 3em;"></div>
+    <div class="spacer"></div>
 
+    <!-- examples -->
 
     <div class="bar" style="width: 30vw;"></div>
 
-    <div style="position: absolute; z-index: -1; left: 8vw; top: 50.7em; width: 12em; height: 8em; ">
-        <img src="theInternetVERSION2.jpg">
+    <div style="margin: 1em;">
+        
+        <div class="imgWrapper" style="left: 11%; top: 2em; width: 12em; height: 8em; ">
+            <img src="theInternetVERSION2.jpg">
+        </div>
+
+        <div class="imgWrapper" style="left: 63%; top: 1em; width: 8em; height: 11em; ">
+            <img src="magazine_v2.1.jpg">
+        </div>
+
+        <div class="imgWrapper" style="left: 3%; top: -2em; width: 10em; height: 9em; ">
+            <img src="theFutureAwaits.jpg">
+        </div>
+
     </div>
 
-    <div style="position: absolute; z-index: -1; left: 60vw; top: 58.2em; width: 8em; height: 11em; ">
-        <img src="magazine_v2.1.jpg">
-    </div>
+    <!-- font download -->
 
-    <div style="position: absolute; z-index: -1; left: 14vw; top: 65.8em; width: 9em; height: 9em; ">
-        <img src="theFutureAwaits.jpg">
-    </div>
+    <div class="bar" style="margin: auto; width: 65vw;"></div>
+
+
+    <p style="text-align: center; margin: 2.5em;"> 
+        ---> 
+        <a href="Monitor-G3.otf" download> download font here</a> 
+        <--- 
+    </p>
+
+    <div class="bar" style="margin: auto; width: 65vw;"></div>
+
+
+    <div class="spacer"></div>
 
 
     <!-- background/text -->
